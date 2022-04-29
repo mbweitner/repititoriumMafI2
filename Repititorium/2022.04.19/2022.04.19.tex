@@ -1,0 +1,147 @@
+\tipp{Für die Klausur Zeitmanagement}{Gehe alle Aufgaben zu beginn einmal durch und schreibe dir eine Bewertung an die einzelnen Aufgaben, für wie schwer man diese hält.\\
+Teile halte dir feste Zeiträume für einzelne Aufgaben fest und gehe zur nächsten Aufgabe, wenn die Zeit zum lösen der Aufgabe nicht reicht.
+}
+
+\subsection{Aufgabe 1}
+Beweisen Sie:
+Für alle $n \in \N$ gilt:
+\begin{align*}
+    n^3 + 5n \text{ ist durch 6 teilbar}
+\end{align*}
+
+%\subsubsection{Versuch die Aufgabe selber zu lösen}
+%I.A: ($n = 1$)
+%\begin{align*}
+%    1^3 + 5 \cdot 1 = 1 + 5 = 6 \Rightarrow 6 \% 6 = 0 \checkmark
+%\end{align*}
+%IV:
+%\begin{center}
+%    Für ein beliebiges aber festes $n \in \N$ gilt die Aussage.
+%\end{center}
+%\textbf{}\\
+%IS: ($n \rightarrow n+1$)
+%\begin{align*}
+%    (n+1)^3 + 5(n+1) &= n^3 + 3n^2 + 3n + 1 + 5(n+1)\\
+%    &=n^3 + 3n^2 + 3n + 1 + 5n + 5\\
+%\end{align*}
+
+
+\subsubsection{Musterlösung Alexander Frank}
+\tipp{Aussagen greifbar machen}{Vereinfache die Aussage, sodass sie einfacher zu beweisen ist.}
+\begin{align*}
+    A(n) &\Leftrightarrow 6 | (n^3 + 5n)\\
+    &\Leftrightarrow \frac{1}{6}(n^3 + 5n) \in \N
+\end{align*}
+\textbf{}\\
+Induktionsanfang: ($A(1)$)
+\begin{align*}
+    6 &| (1^3 + 5)\\
+    6 &| 6\\
+    &\hspace{2em}\checkmark
+\end{align*}
+\textbf{}\\
+Induktionsvoraussetzung:
+\begin{center}
+    Es gelte für ein $n \in \N$ die Aussgae $A(n)$.
+\end{center}
+\tipp{Induktionsvoraussetzung für \underline{\textbf{ein}} $n$}{Es darf nicht geschrieben werden, dass die Aussage für alle $n \in \N$ gilt.\\
+Eine andere Formulierung wäre:
+\begin{center}
+    Es existiert ein $n \in \N$ für alle $k \leq n$ gilt $A(k)$.
+\end{center}
+}
+
+Induktionsschritt: ($n \rightarrow n+1$)
+\tipp{Aussage mit $n+1$ aufschreiben }{Schreibe immer die Aussage die zu zeigen ist auf.\\
+Dies hilft, das Ziel besser im Auge zu behalten und den Weg nicht zu verlieren.
+}
+\begin{align*}
+    A(n+1) \Leftrightarrow 6 | \big((n+1)^3 + 5(n+1)\big)
+\end{align*}
+\tipp{Wähle immer die schwerere Seite zuerst}{
+Es ist leichter von der von der schwereren Seite zur Leichten zu gelangen.\\
+Analogie: Vom Berg runter ist leichter als den Berg herauf zu gelangen.
+}
+\tipp{Induktionsvoraussetzung benutzen}{Irgendwann \underline{muss} immer die Induktionsvoraussetzung eingesetzt werden.}
+\begin{align*}
+    6 | \big((n+1)^3 + 5(n+1)\big) &\Leftrightarrow 6 | \big((n^3 + 3n^2 + 3n +1) + 5n +5\big)\\
+    &\Leftrightarrow 6 |\big(\underbrace{(n^3 +5n)}_{\text{Ist durch 6 teilbar}} + (3n^2 +3n +6)\big)\\
+    &\overset{\text{I.V.}}{\Leftrightarrow} 6 | (3n^2 + 3n + 6) \\
+    &\Leftrightarrow 6| \big(3n(n+1) + \underbrace{6}_{\text{Ist durch 6 Teilbar}}\big)\\
+    &\Leftrightarrow 6|\big(3n(n+1)\big)\\
+    &\Leftrightarrow 6|3 \cdot \sum_{k=1}^{n} 2k\\
+    &\Leftrightarrow 6|6 \cdot \sum_{k=1}^{n}k
+\end{align*}
+
+\tipp{Induktionsbeweis in Induktionsbeweis}{Fällt einem die Formel $\sum_{k=1}^{n} 2k = n(n+1)$ kann man auch einfach einen Induktionsbeweis im Induktionsbeweis führen wie folgt:
+\begin{align*}
+    B(n) \Leftrightarrow 6 | 3(n+1)n
+\end{align*}
+I.A.:
+\begin{align*}
+    B(1) \Leftrightarrow 6 | 6 \checkmark
+\end{align*}
+I.V.:
+\begin{center}
+    Die Aussage $B(n)$ gilt für ein beliebiges aber festes $n \in \N$
+\end{center}
+I.S:
+\begin{align*}
+    B(n+1) &\Leftrightarrow 6 | 3(n+2)(n+1)\\
+    &\Leftrightarrow 6 | \big(3n(n+1) + 6(n+1)\big)\\
+    &\overset{I.V.}{\Leftrightarrow} 6 | 6(n+1)
+\end{align*}
+}
+
+\spickzettel{$\sum_{k=1}^{n} 2k = n(n+1)$}
+
+\newpage
+\subsection{Aufgabe 2}
+
+Beweisen Sie, dass für alle $n \in \N$ die Aussage
+\begin{align*}
+    (1 + x)^n \leq 1 + (2^n -1)x
+\end{align*}
+für alle $x \in [0, 1]$ gilt.
+
+\subsubsection{Musterlösung Alexander Frank}
+
+\begin{align*}
+    A(n) \Leftrightarrow (1 + x)^n \leq 1 + (2^n -1)x &&\forall x \in [0, 1]
+\end{align*}
+
+Induktionsanfang:
+\begin{align*}
+    A(1) &\Leftrightarrow (1 + x)^1 \leq 1 +(2^1 - 1)x &&\forall x \in [0, 1]\\
+    &\Leftrightarrow (1 +x) \leq 1 + x  &&\forall x \in [0, 1]
+\end{align*}
+
+Induktionsvoraussetzung:
+\begin{center}
+    Es gelte $A(n)$ für $n \in \N$
+\end{center}
+
+Induktionsschritt:
+\begin{align*}
+    A(n + 1) \Leftrightarrow (1 + x)^{n+1} \leq 1 + (2^{n+1} - 1)x
+\end{align*}
+\tipp{Ausrufezeichnen drüber setzen}{Wenn man ein ! drüber setzt, dann heißt das, man möchte, dass die Aussage gilt, allerdings gibt es noch kein Beweis dazu.}
+\begin{align*}
+    1 + (2^{n+1} -1)x &\Leftrightarrow 1 + (2^n + 2^n -1)x\\
+    &\Leftrightarrow 1 + (2^n -1)x + 2^nx\\
+    &\overset{I.V.}{\geq} (1 + x)^n + 2^nx \overset{!}{\geq} (1 + x)^{n+1}\\
+    &\Leftrightarrow (1 + x)^n + 2^nx \overset{!}{\geq} (1 + x) (1+x)^n\\
+    &\Leftrightarrow (1 + x)^n + 2^n \overset{!}{\geq} (1 + x)^n + x(^+x)^n\\
+    &\Leftrightarrow 2^nx \overset{!}{\geq} (1 +x)^nx
+\end{align*}
+1. Fall ($x = 0$)
+\begin{align*}
+    0 \geq 0
+\end{align*}
+2. Fall ($x > 0$)
+\begin{align*}
+    2^n \overset{!}{\geq} (1 + x)^n
+\end{align*}
+\begin{align*}
+    &\Leftrightarrow 2^n \geq (1 + 1)^n \geq (1 + x)^n
+\end{align*}

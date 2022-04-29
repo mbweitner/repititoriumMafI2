@@ -1,0 +1,166 @@
+\tipp{Die Aufgaben des Repititoriums sind interessant}{Die Aufgaben des Repititoriums, werden für die Erstellung der Klausur mit in betrachtet gezogen und können in dieser in ähnlicher Form dran kommen. Die Aufgaben in der Klausur können, also beispielsweise ähnliche Kniffe, wie hier, enthalten, was zur Lösung der Aufgaben hilfreich sein kann.}
+
+\subsection{Was für Probleme kommen und wie löst man die?}
+
+Es gibt vier relevante Problemstukturen:
+\begin{enumerate}[label=\arabic*)]
+    %1)
+    \item $\exists x \in X : A(x)$
+    \begin{itemize}
+        \item Nullstellen
+        \item Ableitung
+        \item Integrall
+        \item Induktionsanfang
+        \item ...
+    \end{itemize}
+    Lösen mit: 
+    \begin{itemize}
+        \item Algorithmen
+        \item Verfahren (Ableitungsregeln)
+        \item l'hopital
+        \item Raten (Bauchgefühl)
+        \item Umformungen
+    \end{itemize}
+    %2)
+    \item $\forall y \in Y: A(y)$
+    \begin{itemize}
+        \item Obere-/Untereschranken
+        \item Globale Werte (Maxima/Minima/...)
+        \item Norm (Normeigenschaften)
+    \end{itemize}
+    Lösen mit:
+    \begin{itemize}
+        \item Induktion
+        \item Abschätzung
+        \item Folgerungen aus Wahrheit
+    \end{itemize}
+    %3)
+    \newpage
+    \item $\exists x \in X \ \forall y \in Y: A(x, y)$
+    \begin{itemize}
+        \item Neutrales Element
+        \item Supremum/ Infimum
+    \end{itemize}
+    Lösen mit:
+    \begin{itemize}
+        \item Wähle $x \in X!$ 
+        \begin{itemize}
+            \item Bauchgefühl/Intuition $\Rightarrow$ Induktion, Mengenaufteilung, Abschätzung
+        \end{itemize}
+    \end{itemize}
+    %4)
+    \item $\forall y \in Y \ \exists x \in X: A(x, y)$
+    \begin{itemize}
+        \item Inverse(s) Element(e)
+        \item Funktionswerte
+        \item Funktionen
+    \end{itemize}
+    Lösen mit:
+    \begin{itemize}
+        \item Bestimme $x(y) \in X $ 
+        \begin{itemize}
+            \item Beispiel: $\forall c \in \R \exists z \in \overline{\C}: z^2 = x$ mit $c = R + I i$ und $z = a + bi$
+        \end{itemize}
+    \end{itemize}
+    Lösen mit:
+        \begin{itemize}
+            \item Umformen
+            \item Abschätzen
+        \end{itemize}
+        \begin{align*}
+    \forall y \in \R \ \forall \varepsilon > 0 \ \underbrace{\underline{\underline{\exists \delta > 0}}}_{\leftarrow \delta(y, \varepsilon)} \ \forall x \in \R: \underbrace{(|x - y| < \delta \Rightarrow |f(x) - f(y)| < \varepsilon)}_{A(y, \varepsilon, \delta , x)}
+\end{align*}
+\end{enumerate}
+
+\newpage
+\subsection{Aufgabe 1}
+
+\begin{align*}
+    x_n = \frac{n}{2^n} \text{ Zeige Konvergenz per Definition}
+\end{align*}
+Definition der Konvergenz
+\begin{align*}
+    \exists x \in \R \ \forall \varepsilon > 0 \ \exists n_0 \in \N \ \forall n \geq n_0: |x_n - x| < \varepsilon
+\end{align*}
+
+\subsubsection{Musterlösung Alexander Frank}
+
+\begin{align*}
+    \underbrace{\exists x \in \R}_{x \in \R} \ \forall \varepsilon > 0 \ \underbrace{\exists n_0 \in \N}_{n_0(\varepsilon) \in \N} \ \forall n \geq n_0: |\frac{n}{2^n} - x| < \varepsilon
+\end{align*}
+
+\tipp{Werte einsetzen}{Setze einfach ein paar Werte ein und schaue dir an wie sich die Funktion verhält}
+\begin{enumerate}[label=\arabic*)]
+    \item $x \in \R$\\
+    Nebenrechnung (Werte in $\frac{n}{2^n}$ einsetzen):
+    \begin{align*}
+        \frac{1}{2}, \frac{1}{2}, \frac{3}{8}, \frac{1}{4}, \frac{5}{32}, \frac{3}{32}, ..., 0\\
+        \\
+        \frac{1000}{2^{1000} < \frac{1000}{2^{125}}}
+    \end{align*}
+    Wir lassen unser Bauchgefühl entscheiden und wählen $x = 0$ (Behauptung).\\
+    \wissen{\begin{align*}
+        n^2 \leq 2^n &&& n \geq 4
+    \end{align*}}
+    Behauptung:
+    \begin{align*}
+        &\forall \varepsilon > 0 \ \exists n_0 \in \N \ \forall n \geq n_0: |\frac{n}{2^n} - 0| < \varepsilon && \overset{x_n > 0}{\Leftrightarrow} \\
+        &\forall \varepsilon > 0 \ \exists n_0 \in \N \ \forall n \geq n_0: \frac{n}{2n} < \varepsilon && \overset{\text{Wissen }n \geq 4}{\Leftarrow}\\
+        &\forall \varepsilon > 0\ \exists n_0 \in \N \ \forall n \geq \max(4, n_0): \frac{n}{2^n} \leq \frac{n}{n^2} < \varepsilon && \Leftrightarrow\\
+        &\forall \varepsilon > 0 \ \exists n_0 \in \N \ \forall n \geq \max(4, n_0): \frac{n}{2^n} \leq \frac{1}{n} < \varepsilon && \overset{n \geq n_0}{\Leftrightarrow}\\
+        &\forall \varepsilon > 0 \ \exists n_0 \in \N \ \forall n \geq \max(4, n_0): \frac{n}{2^n} \leq \frac{1}{n} \frac{1}{n_0} < \varepsilon && \Leftarrow\\
+        &\forall \varepsilon > 0 \ \exists n_0 \in \N: \frac{1}{n_0} < \varepsilon && \Leftrightarrow\\
+        &\forall \varepsilon > 0 \ \exists n_0 \in \N: \frac{1}{\varepsilon} < n_0 && \Leftrightarrow\\
+        &\forall \varepsilon > 0 \ \exists n_0 \in \N: n_0 \geq \left\lceil \frac{2}{\varepsilon}\right\rceil && \Leftarrow \\
+        &\forall \varepsilon > 0 \ \exists n_0 \in \N: n_0 = \max({4, \left\lceil \frac{2}{\varepsilon}\right\rceil})
+    \end{align*}
+    \tipp{Auf und Abrunden hilft}{Bei der Bestimmung von echt kleiner oder echt größer kann es helfen, dass man seinen Term, mit Hilfe der Gauß'schen Klammern, auf-/abrundent.}
+\end{enumerate}
+
+
+\tipp{Rekursive Folgen sind in der Klausur beliebt}{Aufgaben mit rekursiven Folgen sind gern gesehene Aufgaben in einer Klausur, da sie mehrere Themen gleichzeitig abfragen.}
+\subsection{Aufgabe 2}
+
+\begin{align*}
+    a_0 &= \frac{1}{2} & a_{n+1} = a_n(2-a_n)
+\end{align*}
+
+\textbf{Fiese Aufgabenstellung:}
+\begin{center}
+    Untersuche auf Konvergenz und gebe gegebenenfalls einen Grenzwert an.
+\end{center}
+Aufgabe lösen in Schritten:
+\begin{enumerate}[label=\arabic*)]
+    \item Beschränktheit zeigen 
+    \begin{itemize}
+        \item $a \leq a_n \leq b$
+        \item $\forall a, b \in \R \ \forall n \in \N:$
+    \end{itemize}
+    Werte in die Folge einsetzen (NR):
+    \begin{align*}
+        \frac{1}{2}, \frac{3}{4}, \frac{15}{16}, \frac{17 \cdot 15}{16^2}, \dots, 1
+    \end{align*}
+    Alexander Frank würde die Aussage $\underbrace{0 \leq a_0 \leq 1}_{\text{Induktion}}$ beweisen.
+    \item Monotonie $\forall n \in \N: a_{n+1} \overset{<}{>} a_n$
+    \begin{itemize}
+        \item keine Induktion, wenn vorher Beschränktheit gezeigt ist
+        \item $\Rightarrow$ Folgerung aus Wahrheit
+    \end{itemize}
+    \item $\Rightarrow$ Aus einem Satz der Vorlesung folgt: Aus Beschränktheit und Monotonie folgt die Konvergenz
+    \item Grenzwert 
+    \begin{itemize}
+        \item $a_{n+1} = a_n = a$
+        \item $a = a(2-a)$
+        \item $\lim_{n \rightarrow \infty} a_{n+1} = \lim_{n \rightarrow \infty} a_n = a$
+    \end{itemize}
+    
+    Tipp zum Lösen der Aufgabe:
+    \newcommand{\db}[1]{\underline{\underline{#1}}}
+    \begin{align*}
+        a_{n+1} &= \db{a_n(2 - a_n)}\\
+        &= \db{2a_n - a_n^2}\\
+        &= 1 - 1 + 2a_n - a_n^2\\
+        &= 1 - (1 - 2a_n + a_n^2)\\
+        &= \db{1 - (1 - a_n)}
+    \end{align*}
+\end{enumerate}

@@ -1,0 +1,99 @@
+%\usepackage{fancyhdr}
+\usepackage[ngerman,german]{babel}
+\usepackage[utf8]{inputenc}
+%\usepackage[latin1]{inputenc} % für Linux Nutzer
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{extarrows}
+\usepackage{enumerate}
+\usepackage{enumitem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%Weitere Zeichenpakete für zusätzliche Symbole %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{stmaryrd}
+\usepackage{wasysym}
+\usepackage{pifont}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Mit dem folgenden Paket können einfache Rechnungen automatisch ausgerechnet werden%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{xfp}%Beispiel: \fpeval{3+5+6} => 14
+\usepackage{fp}
+\usepackage{spreadtab}%Tabellenberechnungen
+\usepackage{tabularx}
+
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{pgf}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{color, colortbl}
+\usepackage{tcolorbox}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%% Ganz viele Befehle %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Mengen
+
+\newcommand{\N}{\mathbb N}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\K}{\mathbb K}	
+
+% Ableitungen
+
+\newcommand{\pfrac}[1]{{\frac\partial{\partial #1}}}	% partielle Ableitung als Bruch, Argument ist Variable, nach der abgeleitet wird
+
+% Griechische Buchstaben
+
+\renewcommand{\phi}{\varphi}
+\newcommand{\eps}{\varepsilon}
+
+% Pfeile / Äquivalenzen 
+
+\newcommand{\Ra}{\Rightarrow}							% "daraus folgt"
+\newcommand{\La}{\Leftarrow}							% (analog wie oben)
+\newcommand{\eq}{\Leftrightarrow}						% äquivalent
+\newcommand{\upto}{\nearrow}							% Konvergenz von unten
+\newcommand{\downto}{\searrow}							% Konvergenz von oben
+
+% Vektorräume
+
+\newcommand{\inv}{{-1}}									% zum schnelleren Invertieren per ^\inv
+
+\newcommand{\mat}[4]{\begin{pmatrix}#1&#2\\#3&#4\end{pmatrix}}
+														% 2x2-Matrix
+\newcommand{\vek}[2]{\begin{pmatrix}#1\\#2\end{pmatrix}}% 2dim. Vektor
+
+\newcommand{\bpm}{\begin{pmatrix}}						% Matrix (Anfang)
+\newcommand{\epm}{\end{pmatrix}}						% Matrix (Ende)
+
+%%%%%%%%%%check und uncheck%%%%%%%%%%%%%%%%
+\newcommand{\cmark}{\text{\ding{51}}}                   % Check-Mark
+\newcommand{\xmark}{\text{\ding{55}}}                   % UncheckMark
+	
+
+
+\newcommand{\tipp}[2]{
+\begin{tcolorbox}[colback=green!5!white,colframe=green!60!black,title=Tipp: #1]
+#2
+\end{tcolorbox}
+}
+
+
+\newcommand{\spickzettel}[1]{
+\begin{tcolorbox}[colback=magenta!5!white,colframe=magenta!60!black,title = Interessant für Spickzettel]
+#1
+\end{tcolorbox}
+}
+
+\newcommand{\wissen}[1]{
+\begin{tcolorbox}[colback=cyan!5!white,colframe=cyan!60!black,title = Das Wissen wir bereits]
+#1
+\end{tcolorbox}
+}
