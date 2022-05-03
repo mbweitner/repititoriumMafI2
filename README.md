@@ -1,4 +1,4 @@
-# DAP2 Tafelanschrieb Sommersemester 2022
+# Mafi2 Repititorium Sommersemester 2022
 
 ## Beschreibung
 
