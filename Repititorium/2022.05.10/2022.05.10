@@ -1,0 +1,100 @@
+\subsection{Reihen und Potenzreihen}
+\subsubsection{Divergenz}
+Wie kann man Divergenz beweisen:
+\begin{enumerate}[label=\arabic*)]
+    \item Ist $a_k$ keine Nullfolge? (Notwendige Bedingung)\\ 
+    $\Rightarrow$ nicht konvergent, nicht absolut konvergent
+    \item \underline{Minorantenkriterium}: $\exists k_0 \in \N \ \forall k \geq k_0: a_k \geq c_k \geq 0 \land \sum_{k=1}^{\infty} c_k \text{ divergent}$\\
+    $\Rightarrow \sum_{k=1}^{\infty} a_k$ divergent $\Rightarrow$ nicht konvergent $\Rightarrow$ nicht absolut konvergent\\
+    Bekannte divergente Reihen: $\sum \frac{1}{k}, \sum (-1)^k, \sum \frac{1}{\sqrt{k}}$
+    \item \underline{Wurzelkriterium}: $\underbrace{\underset{n \rightarrow \infty}{\lim sup}}_{\text{Limes Superior}} \sqrt[n]{|a_k|} > 1$
+    \item \underline{Quotientenkriterium}: $\underbrace{\underset{n \rightarrow \infty}{\lim sup}}_{\text{Limes Superior}} \left|\frac{a_{n+1}}{a_n}\right| > 1$
+\end{enumerate}
+
+\subsubsection{Konvergenz}
+\begin{enumerate}[label=\arabic*)]
+    \item Ähnlich zu bekannter Reihe? Geometrische!\\
+    $\sum \frac{(-1)^{k+1}}{k}, \sum \frac{1}{k^m} m \geq 2, \sum (x + \frac{1}{k})^k x\in [0, 1), \sum \frac{k^5}{k!}$ konvergent\\
+    $\sum_{k=1}^{\infty} \frac{1}{k (k+1)} = 1, \sum_{k=0}^{\infty} x^k = \frac{1 - x^{a +1}}{1-x}, \sum_{k=0}^{\infty} \frac{x^4}{k!} = e^x, \sum_{k=1}^{\infty} \frac{(-1)^{k+1}}{k} (x - 1)^k = \ln(x)$
+    \item Majorantenkriterium: $\exists k_0 \in \N \ \forall h \geq h_0: |a_k| \leq c_k$ und $\sum c_k$ absolut konvergent\\
+    $\Rightarrow \sum a_k$ absolut konvergent
+    \item a) Quotientenkriterium: $\exists q \in (0, 1) \ \exists h_0 \in \N \ \forall k \geq k_0: a_n \neq 0 \land |\frac{a_{k+1}}{a_k}| \leq q$\\
+    $\Rightarrow \sum a_k$ absolut konvergent
+    \setcounter{enumi}{3}
+    \item b)Wurzelkriterium: $\exists q \in (0, 1) \ \exists h_0 \in \N \ \forall h \geq h_0: \sqrt[k]{|a_k|} \leq q$\\
+    $\Rightarrow \sum a_k$ absolut konvergent
+    \item Leibniz: $a_k$ monoton fallende Nullfolge $\Rightarrow \sum_{k=1}^{\infty}(-1)^k a_k$ konvergiert
+    \item Teleskopsumme: $\sum_{k=0}^{N} a_k = \sum_{k=0}^{N} (b_k - b_{k+1}) = b_0 - b_{N +1}$\\
+    $\sum_{n = 0}^{N} a_k = \sum_{k=0}^{N} (b_k - b_{k+2}) = b_0 + b_1 - b_{N+1} - b_{N + 2}$
+\end{enumerate}
+\tipp{Zeige immer erst die absolute Konvergenz}{Soll die Konvergenz einer Reihe gezeigt werden, dann sollte immer die absolute Konvergenz versucht werden zu zeigen, da aus dieser immer die gewöhnliche Konvergenz folgt.}
+
+\subsubsection{Indizien wann welches Verfahren verwendet werden sollte}
+\begin{center}
+    \begin{tabular}{ccc}
+        Majoranten & $\sum_{k=1}^{\infty} \frac{p_k(x)}{q_k(x)}$ & Minoranten\\
+        Quotienten & $(x!, \frac{x}{y}, x^y)-Mischmasch$ & Quotienten\\
+        Wurzel & $a_k \sim> (b_k)^k$ & Wurzel\\
+        & $a_n < b_{k}^k \land b_k$ konvergiert absolut mit $\sqrt{\cdot}$ & \\
+        & $a_n > b_{k}^k \land b_k$ divergiert mit $\sqrt{\cdot}$ & \\
+        Leibniz & $a_n = (-1)^k \cdot b_k$\\
+        Teleskopsumme & $a_k = b_n - b_{k + m} \lor a_k = \frac{1}{(b_k + x) (b_k - y)}$
+    \end{tabular}
+\end{center}
+
+\subsection{Aufgabe 1}
+\begin{align*}
+    \sum_{k=0}^{\infty} (-42)^n
+\end{align*}
+Das ist keine Nullfolge! $\rightarrow$ divergent.\\
+Vorgehen:
+\begin{align*}
+    \underset{n \rightarrow \infty}{\lim} \frac{1}{(-42)^n} = 0 \Rightarrow a_n \text{ bestimmt divergent } \Rightarrow a_n \text{ keine Nullfolge}
+\end{align*}
+\subsection{Aufgabe 2}
+\begin{align*}
+    \sum_{k=1}^{\infty} \frac{k + 1}{k^3 + 1} \sim \frac{1}{k^2}
+\end{align*}
+Vorgehen: Abschätzung / Majorantenkriterium
+\begin{align*}
+    \sum_{k=1}^{\infty} \frac{k +1}{k^3 +1} < \sum_{k=1}^{\infty} \frac{k+1}{k^3} = \sum_{k=1}^{\infty} \frac{1}{k^2} + \sum_{k=1}^{\infty} \frac{1}{k^3}
+\end{align*}
+\subsection{Aufgabe 3}
+\begin{align*}
+    \sum_{n = 1}^{\infty} \frac{(n +1)! \cdot 3n}{(n+2)! - n!}
+\end{align*}
+Das ganze ist keine Nullfolge!\\
+Vorgehen:
+\begin{align*}
+    &\frac{(n+1)! \cdot 3n}{(n+2)! - n!} > \frac{(n+1)! \cdot 3n}{(n+2)! + n!} > \frac{ (n +1)! \cdot 3n}{(n+2)! + (n+2)!}\\
+    &= \frac{(n+1)! \cdot 3n}{2 \cdot (n+2)!} = \frac{3n}{2(n+2)} = \frac{3n}{2n+2}\\
+    &> \frac{3n}{2n+2n} = \frac{3n}{4n} = \frac{3}{4}
+\end{align*}
+
+\subsection{Aufgabe 4}
+\begin{align*}
+    s_N &= \sum_{n=2}^{N} \frac{2}{4n^2 - 9} = \sum_{n=2}^{N} \frac{2}{(2n - 3) (2n + 3)} = \sum_{n=1}^{N} \left[ \frac{1}{3} \frac{2}{(2n-3)} - \frac{1}{3} \frac{2}{(2n +3)} \right]\\
+    &= \frac{2}{3} \left[\sum_{n = 2}^{N} \frac{1}{2n - 3} - \frac{1}{2n +3} \right]
+\end{align*}
+
+Nebenrechnung:
+\begin{align*}
+    \frac{A}{2n -3} - \frac{B}{2n+3} = \frac{ A(2n +3) - B(2n -3)}{(2n - 3) (2n +3)}
+\end{align*}
+\begin{align*}
+    \frac{2An + 3A - 2Bn + 3B}{(2n - 3) (2n +3)} = \frac{2n(A- B) + 3(A + B)}{(2n - 3) (2n +3)} = \dots = 1 + \frac{1}{3} + \frac{1}{5} = \frac{23}{15}
+\end{align*}
+\begin{align*}
+    2n(A - B) &= 0n \Leftrightarrow A = B\\
+    3(A + B) = 2 \Rightarrow A = \frac{1}{3} \ B= \frac{1}{3}
+\end{align*}
+
+\subsection{Aufgabe 5}
+\begin{align*}
+    \sum_{n=1}^{\infty} 2^{(-1)^n - n}
+\end{align*}
+\begin{enumerate}[label=\alph*)]
+    \item Zeige, dass das Quotientenkriterium nicht anwendbar ist!
+    \item Zeige, dass dass Wurzelkriterium funktioniert
+    \item Ist die Reihe konvergent?
+\end{enumerate}
