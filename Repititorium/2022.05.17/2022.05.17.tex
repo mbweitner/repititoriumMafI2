@@ -1,0 +1,128 @@
+\subsection{Hilfreiche Anmerkungen zu Beginn}
+\subsubsection{Definition von Funktionen}
+\begin{align*}
+    \forall x \in A \: \exists! y \in B: f(x) = y
+\end{align*}
+Jedem $x$ ist \underline{genau ein} $y$ zugeordnet. \\
+Definitionsbreich $A$\\
+Bildbereich $B$\\
+Bild $f(A) \subseteq B$
+
+\subsubsection{Injektivität}
+\begin{align*}
+    \forall x, x' \in A&: f(x) = f(x') \Rightarrow x = x' & \text{(nach } x \text{ auflösbar } x\cdot e^x \: \xmark\: x\log x) \frac{x+2}{5} \cmark\\
+    \forall x, x' \in A&: x \neq y \Rightarrow f(x) \neq f(x') & \text{(Monoton(streng), Vorzeichenwechsel)}\\
+\end{align*}
+
+\subsubsection{Surjektivität}
+\begin{align*}
+    \forall y \in B \: \exists x \in A&: f(x) = y & \text{Umkehrfunktion bildbar!}\\
+    B = [a, b] \land \exists x_a&: f(x_a) = a \land \exists x_b: f(x_b) = b \land f \text{ stetig} & (\text{Zwischenwertsatz)})\\
+    B = \R \Rightarrow&\lim_{x \rightarrow - \infty} f(x) = - \infty \land \lim_{x \rightarrow \infty} f(x) = \infty \land f \text{ stetig} & \text{(Zwischenwertsatz)}
+\end{align*}
+
+\subsubsection{Umkehrfunktion}
+\begin{align*}
+    \exists f^{-1} \: \forall x \in A: f^{-1} (f(x)) = x && (\text{Nachrechnen!})
+\end{align*}
+
+\subsubsection{Beschränktheit}
+\begin{align*}
+    \exists k > 0 \: \forall x \in A: |f(x)| < k && \text{(direkte Beweise)}\\
+    0 < 1 \Rightarrow |x| < 1 + |x|\\
+    \vdots\\
+    |f(x)| < k
+\end{align*}
+Fange mit einer Wahrheit an und forme um!\\
+Wahrheiten die man gerne nutzt:
+\begin{itemize}
+    \item $0 < 1$
+    \item $0 \leq x^2$
+    \item $0 \leq (x - a)^2$
+    \item $0 \leq |x - a|$
+\end{itemize}
+
+\subsubsection{Monotonie}
+Ein Beispielfall (streng steigende Monotonie)
+\begin{align*}
+    \forall x, x' \in A: x < x' \Rightarrow f(x) < f(x')
+\end{align*}
+
+\subsubsection{Bekannte Korollare}
+Umkehrfunktion $\Leftrightarrow$ Bijektiv\\
+Strenge Monotonie $\Rightarrow$ Umkehrfunktion auf $f(A)$
+
+
+\subsection{Aufgabe 1}
+Gegeben sei $f: \R \rightarrow \R$ mit $f(x) = \frac{1}{1 + |x|}$
+\begin{enumerate}[label=\alph*)]
+    \item Überprüfe $f$ auf Injektivität, Surjektivivtät und Bijektivität
+    \item Ist $f$ beschränkt?
+    \item Es sei $A = [0, \infty)$ und $B = (0, 1]$ zeigen Sie, dass eine Umkehrabbildung existiert und geben Sie diese an.
+\end{enumerate}
+
+
+
+
+\subsubsection{Musterlösung Alexander Frank}
+
+\begin{enumerate}[label=\alph*)]
+    \item Injektiv?
+    Gegenbeispiel:
+    \begin{align*}
+        f(-1) = \frac{1}{1 + |-1|} = \frac{1}{2} = \frac{1}{1 + |1|} = f(1)
+    \end{align*}
+    \tipp{Mache eine grobe Skizze im Kopf}{Male dir die Funktion grob auf. Mache dir klar in welche Richtung die Funktion für $\infty$ und $- \infty$ verläuft. Anschließend setzen 0 (manchmal auch 1) ein. Wähle wenige Werte mehr um 0 herum und zeichne deine Skizze.}
+    Surjektiv? $B = \R$
+    Schöner Weg (muss man aber auch direkt sehen):
+    \begin{align*}
+        |x| &\geq 0 \neq -\frac{1}{2} & \Leftrightarrow\\
+        |x| &\neq -\frac{1}{2} & \Leftrightarrow\\
+        1 + |x| &\neq \frac{1}{2} & \Leftrightarrow\\
+        \frac{1}{1 + |x|} &\neq 2 & \Leftrightarrow\\
+        f(x) &\neq 2
+    \end{align*}
+    Der Praktikablere Weg:
+    \begin{align*}
+        -1 &\neq \frac{1}{1 + |x|} & \overset{\cdot (1 + |x| }{\Leftrightarrow}\\
+        -(1 + |x|) &\neq 1 & \Leftrightarrow\\
+        -1 - |x| &\neq 1 & \overset{+1}{\Leftrightarrow}\\
+        - |x| &\neq 2 & \overset{\div -1}{\Leftrightarrow}\\
+        |x| \neq -2
+    \end{align*}
+    Weiterer möglicher Weg:
+    \begin{align*}
+        f(x) &\geq 0 & \Leftrightarrow\\
+        \frac{1}{1 + |x|} &\geq 0 & \overset{\cdot (1 + |x|)}{\Leftrightarrow}\\
+        1 \geq 0
+    \end{align*}
+    Somit gilt $\not \exists x \in \R: f(x) = -2$
+    
+    \item \begin{align*}
+        \frac{1}{1 + |x|} &\leq 1 & \overset{\cdot (1 + |x|)}{\Leftrightarrow}\\
+        1 &\leq 1 + |x| & \overset{-1}{\Leftrightarrow}\\
+        0 &\leq |x|
+    \end{align*}
+    \begin{align*}
+        \exists 2 > 0 : \forall x \in \R : \underbrace{-2 < 0 \leq f(x) < 2}_{|f(x)| < 2}
+    \end{align*}
+    Bild$(f) = f(\R) = (0, 1]$
+    
+    \item \begin{align*}
+        y &= \frac{1}{1 + |x|} &\Leftrightarrow \text{mit } x \in \R_{\geq 0}\\
+        y &= \frac{1}{1 + x} &, x \in \R_{\geq 0} & \overset{y > 0}{\Leftrightarrow}\\
+        \frac{1}{y} &= 1 + x &\overset{-1}{\Leftrightarrow}, x \in \R_{\geq 0} \\
+    \end{align*}
+    \begin{align*}
+        f^{-1} &= \frac{1}{x} - 1\\
+        A' &= (0, 1] \quad B' = [0, \infty)
+    \end{align*}
+    \begin{align*}
+        f^{-1}(f(x)) &\overset{x \geq 0}{=} \frac{1}{f(x)} - 1 = \frac{1}{\frac{1}{1 + x}} -1 \\
+        &= \frac{1 + x}{1} - 1\\
+        &= 1 + x - 1 = x
+    \end{align*}
+\end{enumerate}
+
+
+
