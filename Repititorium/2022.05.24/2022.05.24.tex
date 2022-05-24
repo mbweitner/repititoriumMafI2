@@ -1,0 +1,111 @@
+
+\tipp{Induktion funktioniert nur über die Natürlichen Zahlen}{Sobald irgendwas vorliegt über die reelen Zahlen, rationalen Zahlen, irgendwas kontinuierliches oder ähnliches, kann keine Induktion angewendet werden.\\
+$\Q, \R$ Induktion? \textbf{Nein! Komplett Flasch!}
+}
+\tipp{Abschätzungen und Folgerungen nur in eine Richtung}{Abshcätzungen dürfen immer nur in eine Richtung erfolgen und nicht in zwei!
+\begin{align*}
+    x < y \leq z \quad \cmark \Rightarrow x < z \quad \cmark\\
+    x  < y_1 < y_2 < \dots < \underline{y_n \geq z} \quad \xmark \quad x < z\\
+    A \Rightarrow B \Rightarrow \dots \Rightarrow X \Leftarrow y \quad \xmark
+\end{align*}
+}
+\tipp{Skizziere eine Idee}{
+Aufgabenstellung:\\
+Idee:
+\begin{enumerate}
+    \item Löse $x > 1$
+    \item Löse $x y -1$
+    \item Irgendwie muss nun $x \in [-1, 1]$ gezeigt werden
+    \begin{enumerate}[label=\alph*)]
+        \item Stetigkeit + Kompakt
+        \item $\vdots$
+    \end{enumerate}
+\end{enumerate}
+Wenn man nicht genug Handwerk besitzt eine Aufgabe vernünftig zu lösen, skizziere das Vorgehen, wie die Aufgabe gelöst werden sollte. Das Ganze gibt Teilpunkte! Außerdem hilft es beim späteren Draufschauen schneller auf eine Idee zu kommen.
+}
+
+\subsection{Aufgabe 1}
+Ursprüngliche Aufgabe:
+\begin{align*}
+    &f: (0, 1) \rightarrow \R_{>0}\\
+    &f(x) = \frac{1}{2x}
+\end{align*}
+Zeigen Sie mit dem $\varepsilon$-$\delta$-Definition, dass die Funktion stetig, aber nicht gleichmäßig stetig ist.
+\newpage
+Zum einfacheren Lösen teilen wir die Aufgabe im Folgendem in Teilaufgaben auf:\\
+
+\begin{enumerate}[label=\alph*)]
+    \item f ist streng monoton fallend
+    \item Schätzen Sie eine sinnvolle Obergrenze für $\delta > 0$ ab\\
+    $\forall x \in \R: |x - a| < \delta \Rightarrow x \in \R_{>0}$
+    \item Zeige Stetigkeit mit $\varepsilon$-$\delta$-Definition.
+    \item Konstruiere ein Gegenbeispiel für gleichmäßige Stetigkeit
+\end{enumerate}
+
+\randnotiz{
+Falls jemand die Grafiken von der Tafel abgeschrieben hat oder ein Foto davon gemacht wurde, bitte einfach auf Telegramm einmal bitte in die Mafi2 Gruppe schicken oder mir per pm oder einfach selbst in Latex als "randnotiz"(command) einfügen, wenn sich wer traut :)
+}
+
+\subsubsection{Lösung Alexander Frank}
+\begin{enumerate}[label = \alph*)]
+    \item 
+    \begin{align*}
+        0 < x < y \Leftrightarrow \frac{1}{x} > \frac{1}{y} \Leftrightarrow \frac{1}{2x} > \frac{1}{2y} \Leftrightarrow f(x) > f(y)
+    \end{align*}
+    \item Vorüberlegung:
+    \begin{align*}
+        \forall x \in \R: \underbrace{|x - a| < \delta} \Rightarrow \underline{x \in \R_{>0}}
+    \end{align*}
+    \randnotiz{Hier sollte ein Zahlenstrahl zur Verdeutlichung von $|x - a| < \delta$ hin}
+    \begin{align*}
+        &|x - a| < \delta \Leftrightarrow -\delta < x - a < \delta \overset{+a}{\Leftrightarrow} a - \delta < x < a +\delta\\
+        & x \in (\underbrace{a - \delta}_{> 0}, a + \delta)
+    \end{align*}
+    \begin{align*}
+        a - \delta > 0 \Leftrightarrow a > \delta \\
+        \bf{a > \delta > 0}
+    \end{align*}
+    \newpage
+    Lösung:
+    \begin{align*}
+        \forall a \in (0,1) \: \exists \varepsilon > 0 \: \exists \delta > 0 \: (a > \delta > 0) \: \forall x \in (0,1): |x - a| < \delta \Rightarrow |\frac{1}{2x} - \frac{1}{2a}| < \varepsilon
+    \end{align*}
+    \begin{align*}
+        | \frac{1}{2x} - \frac{1}{2a}| &= |\frac{2a - 2x}{4ax}| & (Hauptnenner)\\
+        &= \frac{|a-x|}{2ax}\\
+        &< \frac{1}{2ax} \cdot \delta & (|a - x| < \delta)\\
+        &\overset{^*}{\leq} \frac{1}{2a\frac{a}{2}} \cdot \delta\\
+        & \frac{\delta}{a^2} \overset{!}{<} \varepsilon
+    \end{align*}
+    \begin{align*}
+        ^* x > a - \underbrace{\delta}_{\frac{a}{2}} > \frac{a}{2}
+    \end{align*}
+    \begin{align*}
+        \frac{\delta}{a^2} < \varepsilon & \Leftrightarrow\\
+        \delta < \varepsilon a^2
+    \end{align*}
+    \begin{align*}
+        \delta < \min(\frac{a}{2}, \varepsilon a^2)\\
+        \delta := \min(\frac{a}{4}, \frac{\varepsilon}{2}a^2)
+    \end{align*}
+    \begin{align*}
+        \forall a \in (0,1) \forall \varepsilon > 0 \forall x \in (0,1) : |x - a| < \min(\frac{a}{4}, \frac{\varepsilon}{2}a^2) \Rightarrow |\frac{1}{2x} - \frac{1}{2a}| < \varepsilon
+    \end{align*}
+    \item wird in b) beantwortet?
+    \item \begin{align*}
+        \exists \varepsilon > 0 \forall \delta > 0 \exists x, y \in (0,1): |x- y| < \delta \Rightarrow |f(x) - f(y)| \geq \varepsilon
+    \end{align*}
+    Wähle $x = \delta$.(Weil $\lim \delta \searrow 0$) Wähle $y = x - \frac{\delta}{2} = \frac{\delta}{2}$
+    \tipp{Wähle $x$ und $y$}{Verläuft die Funktion für $x$ gegen 0 gegen $\infty$, dann wähle $x$ mit $\delta$ im Nenner. Läuft $x$ gegen $\infty$ und $f(x)$ gegen $\infty$ so wähle $x$ mit $\delta$ im Nenner. $y$ sollte immer als $y = x \overbrace{\pm}^{\text{Eins davon}} \frac{\delta}{2}$}
+    \begin{align*}
+        |x - y| < \delta \Rightarrow |f(x) - f(y)| \geq \varepsilon\\
+        |x - y| = |\delta - \frac{\delta}{2}| = \frac{\delta}{2} < \delta
+    \end{align*}
+    \begin{align*}
+        |f(x) - f(y)| = |\frac{1}{2\delta} - \frac{1}{2 \frac{\delta}{2}}| = |\frac{1}{2\delta} - \frac{1}{\delta}| = \frac{1}{2\delta} \overset{\delta < 1}{\geq} \frac{1}{2}
+    \end{align*}
+    2.Fall $\delta \geq 1 \: |x - y| < \delta \: x = \frac{1}{2} \: y = \frac{1}{4}$
+    \begin{align*}
+        |\frac{1}{2\frac{1}{2}} - \frac{1}{2 \frac{1}{4}}| = 1 \geq \frac{1}{2}
+    \end{align*}
+\end{enumerate}
