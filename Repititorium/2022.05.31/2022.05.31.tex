@@ -1,0 +1,123 @@
+\subsection{Alle wichtigen Sachen (auch für die Klausur) zum Thema Differenzierbarkeit aus Kapitel 5.1/5.2}
+\subsubsection{Definition Differentialquotient}
+Def:
+\begin{align*}
+    \underset{x\rightarrow a,\:x \in A\backslash \{a\}}{\lim} \frac{f(x) - f(a)}{x - a} = f'(a) = \underset{n \rightarrow 0 , n \neq 0}{\lim} \frac{f(a + h) - f(a)}{h}
+\end{align*}
+
+\subsubsection{Definition Extrema}
+Def: $x \in (a, b)$ ist Extrema von $f: (a, b) \rightarrow \R$, falls $\exists \varepsilon > 0 \: \forall y \in (a, b): |x - y| < \varepsilon \Rightarrow f(x) \overset{\leq}{\geq} f(y) \overset{\text{(Minimum)}}{\text{Maximum}}$
+
+\subsubsection{Notwendige/Hinreichende Kriterium}
+Notwendig: $x \in (a, b) : f'(x) = 0$\\
+Hinreichend: $x \in a, b): f'(x) = 0 \land \overset{f''(x) > 0 (Minimum)}{f''(x) < 0 (Maximum)}$
+
+\subsubsection{Satz von Rolle}
+$a < b, f$ stetig auf $[a, b]$, differenzierbar $(a, b), f(a) = f(b) \Rightarrow \exists x \in (a, b) : f'(c) = 0$
+\subsubsection{Mittelwertsatz}
+$a < b, f$ stetig $[a,b]$, differenzierbar $(a,b) \Rightarrow \exists c \in (a, b): f'(c) = \frac{f(b) - f(a)}{b - a}$
+
+\subsubsection{Monotonie}
+\begin{align*}
+    f'(x) > 0 &\Rightarrow f \text{ streng monoton wachsend}\\
+    f'(x) \geq 0 &\Leftrightarrow f \text{ monoton wachsend}\\
+    f'(x) < 0 &\Rightarrow f \text{ streng monoton fallend}\\
+    f'(x) \leq 0 &\Leftrightarrow f \text{ monoton fallend}\\
+\end{align*}
+\subsubsection{Konvex /konkav}
+$f''(x) \geq 0 \Rightarrow f$ konvex\\
+$f''(x) < 0 \Rightarrow f$ konkav
+\subsubsection{Satz zwischen den Zeilen}
+$x \in (a,b)$ lokales Extremum für $f$ und $f$ konvex/konkav $\Rightarrow x$ globales Extremum (vor Satz 5.23)
+
+\subsection{Aufgabe 1}
+Bildet die Ableitung von $f$ mit dem Differentialquotient für $f(x) = 2x^2 - x$
+
+\subsubsection{Musterlösung Alexander Frank}
+\begin{align*}
+    \underset{x \rightarrow y, \textcolor{green!60!black}{x \neq y}}{\lim} \frac{f(x) - f(y)}{x - y} &= \underset{x \rightarrow y, \textcolor{green!60!black}{x \neq y}}{\lim} \frac{2x^2 - x - 2y^2 + y}{x - y} \\
+    &= \underset{x \rightarrow y, \textcolor{green!60!black}{x \neq y}}{\lim} \frac{2(x ^2 - y^2) - (x - y)}{x - y}\\
+    &= \underset{x \rightarrow y, \textcolor{green!60!black}{x \neq y}}{\lim} \frac{2(x + y) (x - y) - (x - y)}{x-y} \\
+    &= \underset{x \rightarrow y, \textcolor{green!60!black}{x \neq y}}{\lim} 2(x +y) - 1 \\
+    &= \underbrace{2 \cdot 2x}_{\textcolor{green!60!black}{y}} - 1 = \underbrace{4x}_{\textcolor{green!60!black}{y}} - 1
+\end{align*}
+
+\subsection{Aufgabe 2}
+\begin{align*}
+    f: (0, \infty) \rightarrow \R\\
+    f(x) = 4x \cdot \ln (x) + 1
+\end{align*}
+Bestimme alle Extrema von $f$.\\
+Sind diese jeweils global oder lokal?
+
+\subsubsection{Musterlösung Alexander Frank}
+\begin{enumerate}[label=\alph*)]
+    \item Bilde $f'$ und $f''$
+    \item Berechne potentielle (lokale) Extrema $f'(x) = 0$
+    \item Überprüfe auf global
+\end{enumerate}
+
+\begin{enumerate}[label=\alph*)]
+    \item \begin{align*}
+        f(x) &= 4x \cdot \ln(x) + 1\\
+        f'(x) &= 4 \cdot \ln (x) + 4\\
+        f''(x) &= \frac{4}{x}
+    \end{align*}
+    \item Lokale Extrema?:
+    \begin{align*}
+        f'(x) &= 0 &&\Leftrightarrow\\ 
+        4\ln(x) + 4 &= 0 && \Leftrightarrow \\
+        4 \ln(x) &= -4 &&\Leftrightarrow \\
+        \ln(x) &= - 1 && \Leftrightarrow \\
+        x = e^{-1} = \frac{1}{e}
+    \end{align*}
+    \begin{align*}
+        f(\frac{1}{e}) = \frac{4}{e} (-1) + 1 = \frac{e - 4}{e} < 0
+    \end{align*}
+    $(\frac{1}{e}, \frac{e - 4}{e})$ Wendestelle?lokales/globales Extremum?
+    \item \begin{align*}
+        &f''(x) = \frac{4}{x} > 0 \text{ für } x \in (0, \infty)\\
+        &\Rightarrow f \text{ ist konvex}\\
+        &\Rightarrow \text{Jedes lokale Extremum ist global.}
+    \end{align*}
+\end{enumerate}
+
+\subsection{Aufgabe 3}
+\begin{align*}
+    &f: [1, 2]\\
+    &f(x) = - \frac{2}{3}x^{-3} - \frac{1}{2} x^2 + x
+\end{align*}
+Gebe das globale Minimum an (und beweise dies).
+\begin{enumerate}[label = \alph*)]
+    \item Bilde $f'$ und $f''$
+    \item Zeige es existiert ein lokales potentielles Extremum in $(1, 2)$
+    \item Zeige dieses ist ein Maximum !
+    \item Gebe das Minimum an.
+\end{enumerate}
+
+\subsubsection{Musterlösung Alexander Frank}
+\begin{enumerate}[label = \alph*)]
+    \item $f$ ist rationale Funktion $\Rightarrow f \in C^{\infty}((0, \infty), \R)$
+    \begin{align*}
+        f(x) &= - \frac{2}{3} x ^{-3} - \frac{1}{2} x ^2 + x\\
+        f'(x) &= 2x^{-4} - x +1\\
+        f''(x) &= - 8 x ^{-5} - 1
+    \end{align*}
+    \item $\exists x \in (1, 2): f'(x) = 0$\\
+    Zwischenwertsatz: \\
+    $f'$ stetig; $f'(1) = 2 - 1 +1 = 2 > 0$\\
+    $f'(2) = \frac{2}{16} - 2 + 1 = \frac{1}{8} - 1 = - \frac{7}{8} < 0$\\
+    $\Rightarrow \exists x \in (1, 2): f'(x) = 0$
+    \item \begin{align*}
+        f''(x) = - 8 x^{-5} - 1 < 0 \text{ für } x \in [1, 2]
+    \end{align*}
+    $f$ ist konkav\\
+    $\Rightarrow$ lokales Extremum $=$ globales Extremum\\
+    notwendig + hinreichend $\Rightarrow$ Maximum in $(1, 2)$\\
+    jedes lokale Extremum $\Rightarrow$ globales Maximum
+    \item 
+    \begin{align*}
+        f(1) &= - \frac{2}{3} - \frac{1}{2} + 1  =  - \frac{1}{6}\\
+        f(2) &= - \frac{2}{24} - 2 + 2 = - \frac{1}{12}
+    \end{align*}
+\end{enumerate}
