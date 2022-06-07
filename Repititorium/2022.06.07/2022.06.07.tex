@@ -1,0 +1,111 @@
+\subsection{Aufgabe 1 (Taylor Reihen)}
+\begin{align*}
+    f(x) &= e^x + e^{-x} & x_0 &= 0
+\end{align*}
+\begin{enumerate}[label=Schritt \arabic*: ]
+    \item Wie weit ist die Funktion differenzierbar?
+    \item Bilde die ersten drei Ableitungen $f'(x), f''(x), f'''(x)$ und $f(0), f'(0), f''(0), f'''(0)$.
+    \item Bestimme $f^{(k)}(x)$ ($\Rightarrow$ und mache einen Induktionsbeweis)
+    \item Berechne $f^{(k)}(x)$
+    \item Bilde die Taylorreihe/(polynom von Grad n)
+    \begin{align*}
+        \sum_{k = 0}^{\infty} \frac{f^{(k)}(x_0)}{k!} (x - x_0)^k
+    \end{align*}
+    \item Bestimmen Sie den
+    \begin{itemize}
+        \item Konvergenzradius
+        \item \underline{Konvergenzbereich}
+    \end{itemize}
+    \tipp{Unterschied Konvergenzradius - Konvergenzbereich}{
+        Radius:
+        \begin{itemize}
+            \item Quotientenkriterium
+            \begin{align*}
+                \forall x \in A:\exists N \in \N \: \forall n \geq N:\\
+                \left|\frac{a_{n+1}}{a_n}\right| < 1\\ 
+                r := \underset{n \rightarrow \infty}{\lim} \left|\frac{a_n}{a_{n+1}}\right|
+            \end{align*}
+            \item Qurzelkriterium
+            \begin{align*}
+            \forall x \in A: \exists N \in \N \: \forall n \geq N: \sqrt[n]{|a_n|} < 1
+        \end{align*}
+        \begin{align*}
+            r \overset{n \rightarrow \infty}{:=} \frac{1}{\sqrt[0]{|a_n|}} \cmark \text{Limes}
+        \end{align*}
+        \begin{align*}
+            r = \infty \Rightarrow \text{ Konvergenzbereich } A \subseteq \R
+        \end{align*}
+        \end{itemize}
+    }
+\end{enumerate}
+
+\subsubsection{Musterlösung Alexander Frank}
+\begin{enumerate}[label=Schritt \arabic*: ]
+    \item $f \in C (A, \R) \quad A = \R$
+    \tipp{In Klausuren meist $C^{\infty}$}{In der Klausur werden eigentlich immer Funktionen gegeben, die unendlich ableitbar sind.}
+    \item 
+    \begin{align*}
+        f'(x) &= e^x - e^{-x}\\
+        f''(x) &= e^x + e^{-x}\\
+        f'''(x) &= e^x - e^{-x}\\
+        f(0) &= 2\\
+        f'(0) &= 0\\
+        f''(0) &= 2\\
+        f''(0) &= 0
+    \end{align*}
+    \item 
+    Aussage:
+    \begin{align*}
+        f^{(k)}(x) = e^x + (-1)^k e^{-x}
+    \end{align*}
+    Induktionsanfanng:\\
+    \begin{align*}
+        f^{(0)}(x) = e^x + e^{-x}\\
+        f^{(1)}(x) = e^x - e^{-x}\\
+        f^{(2)}(x) = e^x + e^{-x}\\
+        f^{(3)}(x) = e^x - e^{-x}\\
+    \end{align*}
+    Induktionsvoraussetzung:\\
+    \begin{center}
+        Es existiert ein $k \in \N_0: f^{(k)}(x) = e^x + (-1)^k e^{-x}$
+    \end{center}
+    Induktionsschritt:\\
+    \begin{align*}
+        f^{(k+1)}(x) &= (f^{(k)}(x))'\\
+        &\overset{I.V.}{=} (e^x + (-1)^k e^{-x})'\\
+        &\overset{Kettenregel}{=} e^x + (-1)^k (-1) e^{-x}\\
+        &= e^x + (-1)^{k+1} e^{-x}
+    \end{align*}
+    
+    \randnotiz{
+    Schätze für jede Aufgabe ($a - d$) ein $f^{(k)}(x)$.
+    \begin{align*}
+        a_0 &= x        &  c_0 &= -1    & b_0 &= x^2 - x & d_0 &= 1 = 1 \cdot 1\\
+        a_1 &= x^2      &  c_1 &= 1     & b_1 &= x^2 - x & d_1 &= 2 = 1 \cdot 2\\
+        a_2 &= 2x^3     &  c_2 &= 1     & b_2 &= x^2 - x & d_2 &= 8 = 2 \cdot 2^2\\
+        a_3 &= 6x^4     &  c_3 &= -1    & b_3 &= x^2 - x & d_3 &= 48 = 6 \cdot 2^3\\
+        a_4 &= 24x^5    &  c_4&= -1      & b_4 &= x^2 - x & d_4 &= 136 = 24 \cdot 2^4\\
+        \vdots && \vdots && \vdots && \vdots\\
+        a_k &= k! x^{k+1} & c_k &= \sin(k\frac{\pi}{2}) - \cos(k\frac{\pi}{2}) & b_k &= x^{k+2} -(k+1)x & d_k &= 2^k \cdot k!
+    \end{align*}
+    }
+    \item 
+    \begin{align*}
+        f^{(k)}(x) &= e^x + (-1)^{k} e^{-x}\\
+        f^{(k)}(0) &= 1 + (-1)^k = \begin{cases}
+        2 & k \text{ gerade}\\
+        0 & k \text{ ungerade}\\
+        \end{cases}
+    \end{align*}
+    \item \begin{align*}
+        \sum_{k=0}^{\infty} \frac{1 + (-1)^k}{k!} x^k \overset{k = 2i}{=} \sum_{i = 0}^{\infty} \frac{2}{(2i)!} x^{2i}
+    \end{align*}
+    \item Quotientenkriterium:
+    \begin{align*}
+        \left| \frac{\frac{2}{2(i +1)!} x^{2(i+1)}}{\frac{2}{(2i)!} x^{2i}}\right| &= \frac{1}{(2i+1)(2i + 2)} |x|^2\\
+        &< \overbrace{\frac{1}{(2N + 1)(2N+2)}|x|^2}^{\forall x \in \R \: N := \lceil x \rceil \forall i \geq N} < 1 \quad \square
+    \end{align*}
+\end{enumerate}
+
+
+
