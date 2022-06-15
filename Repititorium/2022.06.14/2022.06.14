@@ -1,0 +1,130 @@
+\subsection{Aufgabe 1}
+\newcommand{\Rn}[1]{\uppercase\expandafter{\romannumeral #1\relax}}
+\begin{align*}
+    \underset{x \rightarrow 0}{\lim} \frac{\cos(x) - 1}{x \cdot \sin(x)}
+\end{align*}
+\begin{enumerate}[label=\alph*)]
+    \item Berechne den Grenzwert mit l'Hopital
+    \item Berechne den Grenzwert \underline{ohne} Ableitungen
+\end{enumerate}
+
+\subsubsection{Musterlösung Alexander Frank}
+ 
+ \begin{enumerate}[label=\alph*)]
+     \item 
+\begin{enumerate}[label=\Roman*]
+    \item Argumentieren: 
+    \begin{itemize}
+        \item Stetigkeit, besser
+        \item $C^\infty (\R)$ (unendlich oft differenzierbar)
+    \end{itemize}
+    \begin{align*}
+        f(x) &= \cos(x) - 1 \in C^\infty(\R)\\
+        g(x) &= x \cdot \sin(x) \in C^\infty(\R)
+    \end{align*} 
+    \item 
+    \begin{align*}
+        \underset{x \rightarrow 0}{\lim} f(x) &= f(0) = 0\\
+        \underset{x \rightarrow 0}{\lim} g(x) &= g(0) = 0
+    \end{align*}
+    \item Argumentieren: Differenzierbar (möglicherweise von \Rn{1} abgedeckt)
+    $\Rightarrow$ L'Hopitals anwendbar (gleich), wenn $g'(x) \neq 0 \forall x \in (-\delta, \delta)$
+\end{enumerate}
+\begin{align*}
+    f'(x) &= - \sin(x) & g'(x) &= \sin(x) + x \cdot \cos(x)
+\end{align*}
+Betrachte fortan:
+\begin{align*}
+    \underset{x \rightarrow 0}{\lim} \frac{- \sin(x)}{\sin(x) + x \cdot \cos(x)}
+\end{align*}
+\begin{itemize}
+    \item \Rn{1} - \Rn{3} wiederholen (\Rn{1}/\Rn{3} nur falls nötig)
+    \item \Rn{2}
+    \begin{align*}
+        \underset{x \rightarrow 0}{\lim} -\sin(x) &= 0\\
+        \underset{x \rightarrow 0}{\lim} \sin(x) + x \cdot \cos(x) &= 0
+    \end{align*}
+    \begin{align*}
+        f''(x) &= - \cos(x) & g''(x) &= \cos(x) + \cos(x) - x \cdot \sin(x)
+    \end{align*}
+    Berechne fortan: 
+    \begin{align*}
+        \underset{x \rightarrow 0}{\lim} \frac{- \cos(x)}{2\cos(x) - x \cdot \sin(x)}
+    \end{align*}
+    \Rn{2}
+    \begin{align*}
+        \underset{x \rightarrow 0}{\lim} - \cos(x) &= -1\\
+        \underset{x \rightarrow 0}{\lim} 2\cos(x) - x \cdot \sin(x) &= 2\\
+    \end{align*}
+    Antwortsatz: Differenziebar/Stetig, 2x Grenzwert mit L'Hopital ergibt Grenzwert $-\frac{1}{2}$
+\end{itemize}
+
+\item 
+\begin{enumerate}[label=\arabic*)]
+    \item Additionstheoreme
+    \item Folgengrenzwert (wähle gute Folge $x_n$)
+    \item Potenzreihendarstellung
+\end{enumerate}
+\begin{align*}
+    \frac{\cos(x) - 1}{x \cdot \sin(x)} &= \frac{\sum_{n = 0}^{\infty} (-1)^n \cdot \frac{x^{2n}}{(2n)!} - 1}{x \cdot \sum_{n = 0}^{\infty} (-1)^n \cdot \frac{x^{2n+1}}{(2n+1)!}} = \frac{\sum_{n = 1}^{\infty} (-1)^n \cdot \frac{x^{2n}}{(2n)!}}{\sum_{n = 0}^{\infty} (-1)^n \cdot \frac{x^{2n + 2}}{(2n+1)!}}\\
+    &= \frac{-\frac{1}{2} x^2 + \frac{1}{24} x^4 - \dots}{x^2 - \frac{1}{6} x^4 + \dots} = \frac{-\frac{1}{2} x + \frac{1}{24} x^2 - \dots}{x - \frac{1}{6} x^2 + \dots} \overset{x \rightarrow 0}{=} \frac{-\frac{1}{2} + 0 - \dots}{1 - 0 + \dots} = - \frac{1}{2} 
+\end{align*}
+ \end{enumerate}
+ 
+ \subsection{Aufgabe 2}
+ \begin{align*}
+     M = \{\frac{\ln(\sqrt{x}}{\sqrt{\ln(x)}| x \in (1, e]}\}
+ \end{align*}
+ \begin{enumerate}[label=\alph*)]
+     \item finde alle lokalen Extrema in $(1, e)$
+     \item berechne alle $f(\bar x)$ für $\bar x$ lokale Extremstelle oder Randpunkt (limes?)
+ \end{enumerate}
+ 
+ \subsubsection{Musterlösung Alexander Frank}
+ 
+ 
+ \randnotiz{3 Minuten-Kniff ( erfordert $\ln(x^y) = y \cdot \ln(x)$) $\Rightarrow$ nur für $\Z$ laut Sktipt:
+  \begin{align*}
+    \frac{\ln(\sqrt{x}}{\sqrt{\ln(x)}} = \frac{\ln(x^{\frac{1}{2}}}{\sqrt{\ln(x)}} = \frac{\frac{1}{2} \cdot \ln(x)}{\sqrt{\ln(x)}} = \frac{1}{2} \cdot \sqrt{\ln(x)}    
+  \end{align*}
+  \begin{itemize}
+      \item $\sqrt{x}$: monoton steigend
+      \item $\ln(x)$: monoton steigend\\
+      $\rightarrow$ $\sqrt{\ln(x)}$ monoton steigend
+  \end{itemize}
+  Infimum: $\underset{x \rightarrow 1}{\lim} \frac{1}{2} \sqrt{\ln(x)} = =$\\
+  Supremum: $\underset{x \rightarrow e}{\lim} \frac{1}{2} \sqrt{\ln(x)} = \frac{1}{2}$ (Maximum)
+  }
+  
+  \begin{enumerate}[label=\alph*)]
+      \item Definiere als Funktion
+      \begin{align*}
+          f(x) = \frac{\ln(\sqrt{x})}{\sqrt{\ln(x)}} \quad (1, e) \subset (1, e]
+      \end{align*}
+      Die Funktion ist differenzierbar, da sie eine Konkatenation von differenzierbaren Funktionen ist.
+      \begin{align*}
+          f'(x) &= \frac{\frac{1}{\sqrt{x}} \cdot \frac{1}{2 \sqrt{x}} \cdot \sqrt{\ln(x)} - \ln(\sqrt{x}) \cdot \frac{1}{\sqrt{\ln(x)}} \cdot \frac{1}{x}}{\ln(x)}\\
+          &= \frac{\frac{1}{2x} \sqrt{\ln(x)} - \frac{1}{2x} \cdot \frac{\ln(\sqrt{x})}{\sqrt{\ln(x)}}}{\ln(x)}\\
+          &= \frac{\ln(x) - \ln(\sqrt{x})}{2x \cdot \sqrt{x} \cdot \ln(x)}\\
+          &= \frac{\ln(\frac{x}{\sqrt{x}})}{2x \sqrt{\ln(x)} \cdot \ln(x)} = \frac{\ln(\sqrt{x})}{2x \sqrt{\ln(x)} \ln(x)}
+      \end{align*}
+      \begin{align*}
+          f'(x) = 0 &\Leftrightarrow \ln(\sqrt{x}) = 0\\
+          &\Leftrightarrow \sqrt{x} = 1\\
+          &\Rightarrow x = 1
+      \end{align*}
+      $\Rightarrow$ keine lokalen Extrema in $(1, e)$ möglich\\
+      Zweite Ableitung nicht nötig, da lokale Extrema und nicht Hochpunkt/Tiefpunkt gefragt
+      
+      \item 
+      \begin{align*}
+          \underset{x \rightarrow 1}{\lim} \frac{\ln(\sqrt{x})}{\sqrt{\ln(x)}} &\Rightarrow \text{L'Hopital}
+      \end{align*}
+      mit \Rn{1}, \Rn{2}:
+      \begin{align*}
+          \underset{x \rightarrow 1}{\lim} \frac{\frac{1}{\sqrt{x}} \cdot \frac{1}{2\sqrt{x}}}{\frac{1}{2\sqrt{\ln(x)}} \cdot \frac{1}{x}} = \underset{x \rightarrow 1}{\lim} \sqrt{\ln(x)} = \sqrt{\ln(1)} = \sqrt{0} = 0
+      \end{align*}
+      \begin{align*}
+          f(e) = \underset{x \rightarrow e}{\lim} \frac{\ln(\sqrt{x})}{\sqrt{\ln(x)}} = \frac{\ln(\sqrt{e})}{\sqrt{\ln(e)}} = \ln(\sqrt{e})
+      \end{align*}
+  \end{enumerate}
