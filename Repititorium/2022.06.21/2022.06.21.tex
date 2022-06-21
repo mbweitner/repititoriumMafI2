@@ -1,0 +1,133 @@
+\subsection{Partielle Integration}
+\newcommand{\partielleIntegration}[4]{
+    \begin{align*}
+            f(x)&=#1 & g(x)&=#3\\
+            f'(x)&=#2 & g'(x)&=#4
+    \end{align*}
+}
+\newcommand{\partielleIntegrationNr}[4]{
+    \begin{align*}
+            \bar f(x)&=#1 & \bar g(x)&=#2\\
+            \bar f'(x)&=#3 & \bar g'(x)&=#4
+    \end{align*}
+}
+\begin{align*}
+    \int_a^b f(x) \cdot g'(x) dx = \left[f(x) \cdot g(x)\right] - \int_a^b f'(x) \cdot g(x) dx
+\end{align*}
+\begin{enumerate}[label=\underline{\arabic*}]
+    \item \partielleIntegration{\dots}{\dots}{\dots}{\dots}
+    \item Einsetzen in Formel
+\end{enumerate}
+
+\subsection{Substitutionelle}
+\begin{align*}
+    \int_a^b f(g(t)) \cdot g'(t) dt &= \int_{g(a)}^{g(b)} f(x) dx
+\end{align*}
+\begin{align*}
+    \int_a^b f(g(x)) dx
+\end{align*}
+\begin{align*}
+    u &= g(x) \text{ substituieren}\\
+    \frac{u}{du} du &= \frac{g(x)}{dx} dx \Leftrightarrow\\
+    1du &= g'(x) dx \Leftrightarrow \\
+    dx &= \frac{1}{g'(x)} du\\
+    \\
+    \int_a^b \underbrace{\bar f(g(x)) \cdot g'(x)}_{f(x)}dx
+    &= \int_{u(\alpha)}^{u(\beta)} \bar f(u) du\\
+    &= \int_{g(\alpha)}^{g(\beta)} \bar f(u) du
+\end{align*}
+
+\subsection{Aufgabe 1}
+
+\begin{align*}
+    \int_0^1  (x^2 + 3x)e^x dx
+\end{align*}
+Bestimme das Integral der angegebenen Funktion.
+
+
+\subsubsection{Musterlösung Alexander Frank}
+\begin{align*}
+    \int_0^1  (x^2 + 3x)e^x dx = \left[(x^2 + 3x)e^x\right]_0^1 - \int_0^1 (2x + 3) e^x dx
+\end{align*}
+
+\partielleIntegration{x^2 + 3x}{e^x}{2x+3}{e^x}
+
+$f, g'$ stetig differenzierbar, $g$ stetig differenzierbar\\
+
+\begin{tcolorbox}[colframe=black!5!white]
+Nebenrechnung: $\int\limits_0^1 (2x + 3)e^x dx$
+\partielleIntegrationNr{2x + 3}{e^x}{2}{e^x}
+
+$\bar f, \bar g$ stetig differenzierbar
+\begin{align*}
+    \int\limits_0^1 (2x + 3)e^x dx &= \left[(2x + 3)e^x\right]_0^1 - \int_0^1 2e^x dx\\
+    &= 5e^1 - 3e^0 - 2 \int_0^1 e^x dx\\
+    &= 5e - 3 - 2 [e^x]_0^1\\
+    &= 5e - 2 - (2e^1 - 2e^0) = 3e - 1
+\end{align*}
+\end{tcolorbox}
+
+\begin{align*}
+    \int_0^1  (x^2 + 3x)e^x dx &= \left[(x^2 + 3x)e^x\right]_0^1 3e - 1\\
+    &= \left[4e^1 - 0e^0\right] - 3e + 1\\
+    &= e + 1
+\end{align*}
+
+\subsection{Aufgabe 2}
+
+Bilde die Stammfunktion von: 
+\begin{align*}
+    \int \sin(x) \cdot \cos(x) dx
+\end{align*}
+
+\subsubsection{Musterlösung Alexander Frank}
+\partielleIntegration{\sin(x)}{\cos(x)}{\sin(x)}{\cos(x)}
+$f, g$ stetig und differenzierbar
+\begin{align*}
+    \int \sin(x) \cdot \cos(x) dx &= \left[\sin^2(x)\right] - \int \cos(x) \cdot \sin(x) dx & \Leftrightarrow (+ \int \sin \cdot \cos)\\
+    2 \cdot \int \sin(x) \cdot \cos(x) dx
+    &= \sin^2(x) &\Leftrightarrow (\div 2)\\
+    \int \sin(x) \cdot \cos(x) dx &= \frac{1}{2} \sin^2(x) - \frac{1}{2} \cos^2(x)
+\end{align*}
+
+\subsection{Aufgabe 3}
+\begin{align*}
+    \int_0^4 \frac{1}{2} x e^{x^2} dx
+\end{align*}
+Bestimme das Integral der angegebenen Funktion.
+
+\subsubsection{Musterlösung Alexander Frank}
+\begin{align*}
+    u &= x^2 \quad u\text{ ist stetig differenzierbar}
+\end{align*}
+\begin{align*}
+    du = 2x dx\\
+    b = 4 &\rightarrow \bar b = u(b) = 4^2 = 16\\
+    a = 0 &\rightarrow \bar a = u(a) = 0^2 = 0
+\end{align*}
+\begin{align*}
+    \int_0^4 \frac{1}{2}xe^{x^2} &= \int_0^4 \frac{1}{4} e^{x^2} 2x dx & (x^2 = 4)\\
+    &= \int_0^4 \frac{1}{4} e^4 du \\
+    &= \frac{1}{4} \left[e^4\right]_0^{16}\\
+    &= \frac{1}{4} \left(e^16 - 1\right)
+\end{align*}
+
+\subsection{Aufgabe 4}
+\begin{align*}
+    \int_0^1 \frac{3x^3 - 6x^2 - 9x + 15}{x^3 - 3x + 3} dx
+\end{align*}
+Bestimme das Integral der angegebenen Funktion.
+
+
+\subsubsection{Musterlösung Alexander Frank}
+Polynomdivision:
+\polyset{style=C, div=:,vars=x}
+\polylongdiv{3x^3 - 6x^2 - 9x + 15}{x^3 - 3x + 3}
+
+\begin{align*}
+    \int_0^1 3 + \frac{-6x^2 + 6}{x^3 - 3x + 3} dx&= \int_0^1 3 - 2 \cdot \frac{1}{x^3 - 3x + 3} \cdot (3x^2 - 3) dx\\
+    &= \int_3^1 - 2 \frac{1}{u} du\\
+    &= \left[3 u - 2\ln(u)\right]_3^1\\
+    &= 3 - 2 \ln(1) - (9 - 2\ln (3))\\
+    &= -6 - 2 \ln(3)
+\end{align*}
