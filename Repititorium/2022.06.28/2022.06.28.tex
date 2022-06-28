@@ -1,0 +1,179 @@
+\newcommand{\aufgabe}[1]{\item \hfill (#1 Punkte)\\}
+\subsection{Probeklausur Aufgaben}
+\begin{enumerate}[label=Aufgabe \arabic*:, , leftmargin=*, itemsep=-1ex]
+    \aufgabe{10}
+    Zeigen Sie mit vollständiger Induktion
+    \begin{align*}
+        \prod_{k = 0}^{n-1} \cos(2^k x) = \frac{\sin(2^nx)}{2^n \sin(x)}
+    \end{align*}
+    \aufgabe{4}
+    Sei $(a_k)_{k \in \N}$ unbeschränkt und monoton wachsend. Zeige das $a_k$ bestimmt divergent gegen $\infty$ ist.
+    \aufgabe{5}
+    Ist die Folge konvergent oder divergent?
+    \begin{align*}
+        a_k := k^{k(\cos(k\pi)-1)}
+    \end{align*}
+    \aufgabe{6}
+    Konvergiert die rekursive Folge? Wenn ja, gebe den Grenzwert an!
+    \begin{align*}
+        a_0 = 1, a_{n+1} = \frac{a_n}{a_n + 2}
+    \end{align*}
+    \aufgabe{10}
+    Überprüfen Sie beide Reihen auf (absolute) Konvergenz oder Divergenz.
+    \begin{align*}
+        a) \quad \sum_{k = 1}^\infty \frac{(-1)^k k^2}{e^k}, && b) \quad \sum_{k=1}^\infty (-1)^k \frac{k}{1 + k^2}
+    \end{align*}
+    \aufgabe{6}
+    Ziegen Sie die folgenden Aussagen
+    \begin{enumerate}[label=\alph*)]
+        \item $2 \leq e \leq 3$
+        \item $\underset{x \searrow 0}{\lim} \frac{(\tan(\sqrt{x}))^2}{x} = 1$
+    \end{enumerate}
+    \aufgabe{6}
+    Berechnen Sie die Taylorreihe von $T[f, 0]$
+    \begin{align*}
+        f: (-\infty, \frac{1}{3}) \rightarrow \R, \quad f(x) := \ln(1 - 3x)
+    \end{align*}
+    \aufgabe{6}
+    Sei $h: [-1, 1] \rightarrow \R$ gegeben durch
+    \begin{align*}
+        h(x) := \begin{cases}
+        -1 & \text{für } x \in [-1, 0),\\
+        1 & \text{für } x \in [0,1]
+        \end{cases}
+    \end{align*}
+    Beweise oder widerlege: Es existiert $H:(-1, 1) \rightarrow \R$ mit $H'(x) = h(x)$
+    \aufgabe{6}
+    Berechnen Sie die Integrale:
+    \begin{align*}
+        a) \quad \int_2^3 \frac{(\ln x)^2}{x} \ dx && b) \quad \int xe^{-x} dx
+    \end{align*}
+\end{enumerate}
+
+\subsection{Lösungsideen Alexander Frank}
+\newcommand{\additionstheoreme}{\underline{\textbf{Additiontheoreme}}}
+\begin{enumerate}[label=Aufgabe \arabic*:, , leftmargin=*]
+    \aufgabe{10} %Aufgabe 1
+    \begin{enumerate}[label=\arabic*)]
+        \item Zeige Induktionsanfang für $n = 0$ (\additionstheoreme)
+        \item Die Aussage gilt für ein $n \in \N_0$ ($\N$)
+        \item Zeige Induktionsschluss (\additionstheoreme)
+        \begin{align*}
+            \prod_{k = 0}^n &= \cos(2^n x) \prod_{k=0}^{n-1} \cos(2^k x)\\
+            &\overset{I.V}{=} \frac{\cos(2^n x) \sin(2^n x}{2^n \sin(x)}\\
+            &= \frac{1}{2} \cos(2^n x) \sin(2^nx) + \frac{1}{2} \cos(2^n x) \sin(2^n x)\\
+            &= \frac{1}{2} \sin (2^n x + 2^n x)
+        \end{align*}
+    \end{enumerate}
+    \aufgabe{4} %Aufgabe 2
+    \begin{enumerate}[label=\arabic*)]
+        \item \begin{align*}
+            \forall N > 0\ \exists n \in \N : N < a_n
+        \end{align*}
+        \item \begin{align*}
+            \forall n \in \N: a_{n+1} \geq a_n
+        \end{align*}
+    \end{enumerate}
+    \begin{align*}
+        b_k &= \frac{1}{a_k} & \lim_{k \rightarrow \infty} b_k &= 0
+    \end{align*}
+    \begin{align*}
+        \forall \varepsilon > 0 \ \exists n_0 \in \N \ \forall n \geq n_0: |b_k| < \varepsilon
+    \end{align*}
+    Begründe mit 1) und 2)
+    \begin{align*}
+        b_k \rightarrow 0 \Rightarrow a_k \rightarrow \pm \infty \overset{2)}{\Rightarrow} a_k \rightarrow + \infty
+    \end{align*}
+    \aufgabe{5} %Aufgabe 3
+    $a_k$ umformen in eine Form
+    \begin{align*}
+        a_k &= \begin{cases}
+        1 & k \text{ gerade}\\
+        k^{-2k} = \frac{1}{k^{2k}} & k \text{ ungerade}
+        \end{cases}
+    \end{align*}
+    Berechne beide Grenzwerte $\Rightarrow$ die Folge divergiert
+    \aufgabe{6} %Aufgabe 4
+    Optional Folge umschreiben 
+    \begin{align*}
+        a_{n+1} = 1 - \frac{2}{a_n + 2}
+    \end{align*}
+    \begin{enumerate}[label=\arabic*)]
+        \item Beschränktheit nachweisen ($0 < a_n \leq 1$ per Induktion zeigen)
+        \begin{align*}
+            1, \frac{1}{3}, \frac{1}{7}, \frac{1}{15}, \frac{1}{31}
+        \end{align*}
+        \item Monotonie $a_{n + 1} < a_n$
+        \item Monoton + Beschränkt $\Rightarrow$ Konvergenz
+        \item $a = \frac{a}{a +2} \underline{\rightarrow 0}$
+    \end{enumerate}
+    \aufgabe{10} %Aufgabe 5
+    \begin{enumerate}[label=\alph*)]
+        \item \textbf{}\\%a)
+        Gefühl sagt absolut konvergent\\
+        Quotientenkriterium wählen und zeige 
+        \begin{align*}
+            \frac{(k + 2) ^2 e ^k}{k^2 e^{k+1}} \rightarrow \frac{1}{e} < 1
+        \end{align*}
+        \item \textbf{}\\%b)
+        Gefühl sagt konvergent und nicht absolut konvergent\\
+        Leibniz Kriterium anwenden und zeigen
+        \begin{align*}
+            \frac{k}{k^2 + 1} \rightarrow 0 \\
+            \text{monoton}
+        \end{align*}
+        nicht absolut durch
+        \begin{align*}
+            \sum_{k = 1}^\infty \frac{k}{k^2 +1} > \sum_{k = 1}^\infty \frac{k}{k^2 + k} = \sum_{k = 1}^\infty \frac{1}{k+1} = \sum_{k = 2}^\infty \frac{1}{k}
+        \end{align*}
+    \end{enumerate}
+    \aufgabe{6} %Aufgabe 6
+    \begin{enumerate}[label=\alph*)]
+        \item \textbf{}\\%a)
+        \begin{align*}
+            2 &\leq \sum_{k = 0}^\infty \frac{1}{k!} \leq 3\\
+            2 &\leq 1 + 1 + \underbrace{\sum_{k = 2}^\infty \frac{1}{k!}}_{\text{geometrisch größere Reihe}} \leq 1 + 1 + 2 \cdot \sum_{k = 2}^\infty \frac{1}{2^k} = 3
+        \end{align*}
+        \item \textbf{}\\%b)
+        \begin{align*}
+            \lim_{x \searrow 0} \frac{\sin^2(\sqrt{x}}{x \cos^2(\sqrt{x}} && \text{L'Hospital 2 mal}
+        \end{align*}
+    \end{enumerate}
+    \aufgabe{6} %Aufgabe 7
+    \begin{enumerate}[label=\underline{\arabic*}]
+        \item Bilde $f', f'', f''', ...$
+        \item Konstruiere $f^{(n)}$
+        \item Induktionsbeweis
+        \item Taylorreihe 
+        \begin{align*}
+            \sum_{k = 0}^\infty \frac{f^{(k)} (x_0)}{k!} (x - x_0) ^k
+        \end{align*}
+        Lösung:
+        \begin{align*}
+            \sum_{n=1}^\infty \frac{3^n}{n} x^n
+        \end{align*}
+    \end{enumerate}
+    \aufgabe{6} %Aufgabe 8
+    Zeichne einmal $h(x)$ auf. Das erinnert dann an $g(x) = (|x|)' \quad x \in \R \backslash \{0\}$
+    Zeige dass der Differenzenquotient im Punkt 0 kaputt geht. Und widerlege durch Konstruktion.
+    \aufgabe{6} %Aufgabe 9
+    \begin{enumerate}[label=\alph*)]
+        \item \textbf{}\\%a)
+        Substituiere
+        \begin{align*}
+            \ln x = u\\
+            \int_{\ln 2}^{\ln 3} u^2 du
+        \end{align*}
+        \item \textbf{}\\%b)
+        Nutze Partielle Integration
+        \begin{align*}
+            f(x) &= x & g(x) &= - e^{-x}\\
+            f'(x) &= 1 & g'(x) &= e ^{-x}
+        \end{align*}
+    \end{enumerate}
+\end{enumerate}
+
+\subsection{Dinge die auf dem Klausurzettel stehen sollten}
+\begin{itemize}
+    \item Additiontheoreme zu $\sin$ und $\cos$
+\end{itemize}
