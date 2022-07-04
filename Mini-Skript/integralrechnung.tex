@@ -1,0 +1,111 @@
+\subsection*{Zerlegung}
+$[a, b]\subset \R$ und endliche Anzahl Punkte $x_0, ..., x_n$ mit $a = x_0 < ... < x_n = b$. Dann heißt $Z = (x_0, ..., x_n)$ Zerlegung von $[a, b]$ und $|Z| := \max \{x_i - x_{i - 1} | i = 1, ..., n\}$ ist Feinheitsmaß von $Z$. Zerlegung heißt äquidistant, wenn die Intervalle $[x_{i - 1}, x_i]$ für $i = 1, ..., n$ alle gleich groß sind.
+\subsection*{Treppenfunktion}
+$Z = (x_0, ..., x_n)$ Terlegung von $[a, b]$, dann heißt $\phi:[a, b]\ra \R$ Treppenfunktion, wenn sie auf jedem Teilintervall $(x_{k-1}, x_k)$ konstant ist. $\mathcal{T}[a,b]$ Menge aller Treppenfunktionen auf $[a, b]$
+\subsubsection*{Integral für Trep.}
+$\phi \in \mathcal{T}[a,b]$ Treppenfunktion bezüglich $Z = (a = x_0, ..., x_n = b)$ und seien $\phi(x) = c_k$ konstante Funktionsabschnitte von $\phi$ für $x \in (x_{k-1}, x_k)$. Def.: Integral von $\phi$ auf $[a, b]$ als: $\int\limits_{a}^b \phi(x) dx := \sum\limits_{k = 1}^n c_k (x_k - x_{k - 1}$.
+\subsubsection*{Monoton. Treppen.}
+Seien $\phi, \psi \in \mathcal{T}[a, b]$, dann $\forall x \in [a, b]: \phi(x) \leq \psi(x) \Ra \int\limits_{a}^b \phi(x) dx \leq \int\limits_a^b \psi(x) dx$
+\subsubsection*{Einschließen Treppen.}
+$f:[a, b] \ra \R$ integrierbar $\eq$ $\forall \varepsilon > 0$ $\bar S(Z, f)$ und $\underline{S}(Z, f)$ existieren mit $\bar S (Z, f) - \underline{S}(Z, f) \leq \varepsilon$
+\subsection*{Ober-/Untersumme}
+Obersumme: $\bar S(Z, f) := \int\limits_a^b \bar \phi(x) dx = \sum\limits_{k = 1}^n \bar c_k (x_k - x_{k - 1}$\\
+Untersumme: $\underline{S}(Z, f) := \int\limits_a^b \underline{\phi}(x) dx = \sum\limits_{k = 1}^n \underline{c}_k (x_k - x_{k -1}$
+\subsection*{Ober-/Unterintegral}
+Oberintegral: $\overline{\int\limits_a^b} f(x) dx := \inf \{\bar S(Z, f)\}$\\
+Unterintegral: $\underline{\int\limits_a^b}f(x) dx := \sup \{\underline{S}(Z, f)\}$
+\subsection*{Riemann-Integral}
+$f$ ist integrierbar, wenn $\underline{\int\limits_{a}^b} f(x) dx = \overline{\int\limits_a^b} f(x) dx$. Integrla von $f$ ist dann $\int\limits_a^b f(x) dx := \underline{\int\limits_a^b} f(x) dx$
+\subsection*{Stetig \texorpdfstring{$\Ra$}{folgt} intbar}
+$f$ auf $[a, b]$ stetig $\Ra$ $f$ auf $[a, b]$ intbar.
+\subsection*{Monoton \texorpdfstring{$\Ra$}{folgt} intbar}
+$f$ monoton auf $[a, b]$ $\Ra$ $f$ auf $[a, b]$ intbar
+\subsection*{Verfeinerung}
+$Z, Z'$ Zerlegungen.
+Verfeinerung: $\tilde Z$ enhtält alle Elemente von $Z$ auf gleichem Intervall\\
+Überlagerung: $\hat Z = Z + Z'$
+\subsubsection*{Zerlegungswechsel}
+$f$ auf $[a, b]$ beschränkt mit $|f(x)| \leq K$ und $Z$ Zerlegung von $[a, b]$ mit Feinheitsmaß $|Z|$. Zerlegung $\tilde Z$ entstehe aus $Z$ durch Hinzunahme eines zusätz. Punkts. Dann gilt:
+\begin{enumerate}[label=\alph*., noitemsep]
+    \item $\underbar S(Z, f) \leq \underbar S(\tilde Z, f) \leq \underbar S(Z, f) + 2K |Z|$
+    \item $\bar S(Z, f) \geq \bar S(\tilde Z, f) \geq \bar S(Z, f) - 2K |Z|$
+\end{enumerate}
+\subsection*{Integralwertbestimmung}
+$f:[a, b]$ beschränkt und $(Z_n)$ Folge von Zerlegungen mit $\lim\limits_{n \ra \infty} |Z_n| = 0$. Dann gilt:
+\begin{enumerate}[label=\alph*., noitemsep]
+    \item $\lim\limits_{n \ra \infty} \underbar S(Z_n, f) = \underline{ \int\limits_a^b} f(x) dx$
+    \item $\lim\limits_{n \ra \infty} \bar S(Z_n, f) = \overline{\int\limits_a^b} f(x) dx$
+\end{enumerate}
+\subsection*{Rieman. Zwischensumme}
+$f:[a, b] \ra \R$ integrierbar und $(Z_n)$ Zerlegungsfolge mit $\lim\limits_{n \ra \infty} |Z_n| = 0$. $\forall Z_n = (x_0, ..., x_m)$ sei $\phi_n \in \mathcal{T}[a,b]$ Treppenfunktion mit $\phi_n(x) := f(\zeta_k)$ für $x \in [x_{k - 1}, x_k)$ mit beliebigen $\zeta_k \in [x_{k - 1}, x_k]$ und $\phi_n(b) = f(b)$. Dann konvergiert $(S_n)$ der Riemannschen Zwischensummen $S_n := \int\limits_a^b \phi_n(x) dx = \sum\limits_{k = 1}^n f(\zeta_k) (x_k - x_{k-1})$ gegen Integral: $\int\limits_{a}^b f(x) dx = \lim\limits_{n \ra \infty} S_n$.
+\subsection*{Integraleigeschaften}
+$f, g$ auf $[a, b]$ integrierbar und $\lambda, \mu \in \R$
+\begin{enumerate}[label=\alph*., noitemsep]
+    \item Linearität: $\int\limits_a^b \lambda f(x) + \mu g(x) dx = \lambda\int\limits_a^b f(x) dx + \mu \int\limits_a^b g(x) dx$
+    \item Monotonie: $\int\limits_a^b f(x) dx \leq \int\limits_a^b g(x) dx$
+    \item Beschränktheit: $\left|\int\limits_a^b f(x) dx\right| \leq \int\limits_a^b |f(x)| dx$+
+    \item $\int\limits_a^b f(x) dx = \int\limits_a^c f(x) dx + \int\limits_c^b f(x) dx$
+    \item $\int\limits_b^a f(x) dx := - \int\limits_a^b f(x) dx$
+    \item $\int\limits_c^c f(x) dx := 0$
+\end{enumerate}
+\subsection*{Mittelwertsatz Integralr.}
+$f:[a, b]\ra \R$ intbar und $\forall x \in [a, b]: m \leq f(x) \leq M$. Dann gilt: $m(b - a) \leq \int\limits_a^b f(x) dx \leq M(b - a)$. \\
+Ist $f$ auch stetig, dann $\exists c \in (a, b)$ mit $\int\limits_a^b f(x) dx = (b - a)f(c)$
+\subsection*{Hauptsatz D./I.Rechnnung}
+$f: I \ra \R$ stetig und $c \in I$. Sei $F: I \Ra \R$ für $x \in I$ definiert als $F(x) = \int\limits_c^x f(t) dt$. Dann folgt:
+\begin{enumerate}[label=\alph*., noitemsep]
+    \item $F$ stetig diffbar udn es gilt $F'(x) = f(x)$
+    \item Für beliebige $a, b \in I$ gilt $\int\limits_a^b f(t) dt = F(b) - F(a)$
+\end{enumerate}
+\subsection*{Stammfunk., unb. Int.}
+$F(x) = \int f(x) dx$. Es gilt $[F(x)]_a^b = F(b) - F(a)$
+\subsection*{Bekannte Integrale}
+\begin{tabular}{p{2em}p{4.6em}p{10em}}
+     $f(x)$ & $F(x)$ & Def.Bereich $f$ \\
+     $c$ & $cx$ & $\R \text{ für } c\in \R$ \\
+     $x^n$ & $\frac{1}{n+1} x^{n +1}$ & $\R \text{ für } n \in \R$ \\
+     $\frac{1}{x^n}$ & $- \frac{1}{n-1} \frac{1}{x^{n-1}}$ & $\R \backslash \{0\}$,$n \in \N\backslash\{1\}$ \\
+     $x^\alpha$ & $\frac{1}{\alpha + 1} x^{\alpha + 1}$ & $\R_{>0}, \alpha \in \R\backslash\{-1\}$ \\
+     $\frac{1}{x}$ & $\ln(|x|)$ & $\R\backslash\{0\}$ \\
+     $e^x$ & $e^x$ & $\R$ \\
+     $a^x$ & $\frac{a^x}{\ln(a)}$ & $\R, a > 0, a \neq 1$ \\
+     $\ln(|x|)$ & $x \cdot \ln(|x|) - x$ & $\R\backslash\{0\}$ \\
+     $\frac{1}{1 + x^2}$ & $\arctan(x)$ & $\R$ \\
+     $\frac{1}{1 - x^2}$ & $\frac{1}{2}\ln(|\frac{x + 1}{x - 1}|)$ & $\R\backslash\{-1, 1\}$ \\
+     $\frac{1}{\sqrt{1 + x^2}}$ & $arsinh(x)$ & $\R$ \\
+     $\frac{1}{\sqrt{1 - x^2}}$ & $\arcsin(x)$ & $(-1, 1)$ \\
+     $\sin(x)$ & $-\cos(x)$ & $\R$ \\
+     $\cos(x)$ & $\sin(x)$ & $\R$ \\
+     $\tan(x)$ & $- \ln (|\cos(x)|)$ & $\R\backslash\{x = \frac{\pi}{2} + k \cdot \pi\}$ \\
+     $ $ & $ $ & $ $ \\
+     $ $ & $ $ & $ $ \\
+     $ $ & $ $ & $ $ \\
+     $ $ & $ $ & $ $ \\
+\end{tabular}
+\subsection*{Partielle Integration}
+$f, g:[a, b]\ra \R$ stetig diffbar.:\\
+$\int\limits_a^b f(x) g'(x) dx = [f(x) g(x)]_a^b - \int\limits_a ^b f'(x) g(x) dx$\\
+Unbestimmte Form: \\
+$\int f(x) g'(x) dx = f(x) g(x) - \int f'(x) g(x) dx$
+\subsection*{Integration d. Substitution}
+$f$ stetig, $g$ stetig diffbar:\\
+$\int\limits_a ^b f(g(t)) g'(t) dt = \int\limits_{g(a)}^{g(b)} f(x) dx$\\
+Unbestimmte Form:\\
+$\int f(g(t)) g'(t) dt = F(g(t))$
+\subsection*{Integralvereinfachung}
+\begin{enumerate}[label=\alph*., noitemsep]
+    \item $\int f(ax + b) dx = l\frac{1}{a} F(ax + b)$
+    \item $\int f(x) f'(x) dx = \frac{1}{2} f^2(x)$
+    \item $\int \frac{f'(x)}{f(x)} dx = \ln (|f(x)|)$
+\end{enumerate}
+\subsection*{Integrale ü. uneig. Int.}
+$\int\limits_a^\infty f(x) dx := \lim\limits_{c \ra \infty} \int_a^c f(x) dx$\\
+$\int\limits_{- \infty}^a f(x) dx := \lim\limits_{c \ra - \infty} \int_c^a f(x) dx$\\
+$\int\limits_{-\infty}^\infty f(x) dx := \int\limits_{-\infty}^c f(x) dx + \int\limits_c^\infty f(x) dx$
+\subsection*{Int. ü. offene Intervalle}
+$f:(a, b) \ra \R$. $\forall I = [\alpha, \beta]\subset(a, b):$ integrierbar. Sei $c \in (a, b)$ beliebig:
+\begin{itemize}[noitemsep]
+    \item $\int\limits_c^b f(x) dx := \lim\limits_{\beta \nearrow b} \int_c^\beta f(x) dx$
+    \item $\int\limits_a^c f(x) dx := \lim\limits_{\alpha \searrow a} \int_\alpha^c f(x) dx$
+    \item $\int\limits_a^b f(x) dx := \int\limits_a^c f(x) dx + \int\limits_c^b f(x) dx$
+\end{itemize}

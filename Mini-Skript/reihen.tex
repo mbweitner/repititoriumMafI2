@@ -1,0 +1,82 @@
+\subsection*{Def. Reihe}
+$\sum\limits_{k = 1}^\infty a_k = a_1 + ...$ eine Reihe. $s_n = \sum\limits_{k = 1}^{n} a_k$ die n-te Teilsumme der Reihe. Folge der Teilsummen konvergent $\Ra$ Reihe konvergent. Sonst divergent.
+\subsection*{Cauchy-Konvergenzkrit.}
+Reihe konvergiert g.d.w. gilt: $\forall \varepsilon > 0 \ \exists n_0\in \N \ \forall n \geq m \geq n_0: \left|\sum\limits_{k = m}^{n} < \varepsilon \right|$ 
+\subsection*{Notw. Konvergenzkrit.}
+$\sum\limits_{k=1}^\infty a_k$ konvergente Reihe $\Ra$ Folge $(a_k)$ ist Nullfolge $\Ra \lim\limits_{k\ra \infty} a_k = 0$.
+\subsection*{Teilsummenbeschränktheit}
+$\sum\limits_{k=1}^\infty a_k$ mit $a_k \geq 0$ $\forall k \in \N$ konvergiert g.d.w. Folge der Teilsummen beschränkt.
+\subsection*{Rechenregeln konv. Reihen}
+$\sum\limits_{k=1}^\infty a_k$, $\sum\limits_{k = 1}^\infty b_k$ konvergente Reihen:
+\begin{enumerate}[label=\alph*., noitemsep]
+    \item $\sum\limits_{k = 1}^\infty (a_k \pm b_k)$ konvergent. Für die Grenzwerte gilt:$\sum\limits_{k = 1}^\infty (a_k \pm b_k) = \sum_{k = 1}^\infty a_k \pm \sum\limits_{k = 1}^\infty b_k$
+    \item $\sum\limits_{k = 1}^\infty c \cdot a_k$ konvergent für $c \in \R$. Es gilt:$\sum\limits_{k = 1}^\infty c \cdot a_k = \cdot \sum\limits_{k = 1}^\infty a_k$
+    \item $\forall l \in N \ l > 0: \sum\limits_{k = l}^\infty a_k$ konvergiert $\eq \sum_{k = 1}^\infty a_k$ konvergiert
+    \item Gilt $a_k \leq b_k \forall k \in \N: \sum\limits_{k = 1}^\infty a_k \leq \sum\limits_{k = 1}^\infty b_k$
+\end{enumerate}
+\subsection*{Def. absolute Konvergenz}
+$\sum\limits_{k = 1}^\infty a_k$ abs. konv. $\eq \sum\limits_{k = 1}^\infty |a_k|$ konv.
+\subsubsection*{Reihenumordnung}
+$\sum\limits_{k = 1}^\infty a_k$ abs. konv. $\Ra$ Jede Umordnung der Glieder konvergiert gegen den selben Grenzwert.
+\subsubsection*{abs. Konv. \texorpdfstring{$\Ra$}{folgt} Konvergenz}
+$\sum\limits_{k = 1}^\infty a_k$ abs. konv. $\Ra$ konvergent
+\subsection*{Cauchy-Produkt}
+$\sum\limits_{k = 0}^\infty a_k, \sum\limits_{k = 0}^\infty b_k$ abs. konverg..Für $n \in \N$ sei $c_n := \sum\limits_{k = 0}^n a_k \cdot b_{n - k}$, dann ist $\sum\limits_{k = 0}^\infty = \left(\sum\limits_{k = 0}^\infty a_k\right) \cdot \left(\sum\limits_{k = 0}^\infty b_k\right)$ abs. konv.
+\subsection*{Konvergenzkriterien}
+
+\subsubsection*{Leibnitz-Kriterium}
+$(a_k)$ monoton fallende Folge mit $\forall k \in \N a_k \geq 0$ mit $\lim\limits_{k \ra \infty}a_k = 0$, dann konvergiert $\sum\limits_{k = 1}^\infty (-1)^k a_k$.
+\subsubsection*{Majorantenkriterium}
+$\sum\limits_{k = 1}^\infty c_k$ konvergent mit $\forall k \in \N: c_k \geq 0$. Wenn für $\sum\limits_{k = 1}^\infty a_k \exists k_0 \in \N$, sodass $\forall k \geq k_0$ gilt $|a_k| \leq c_k$, dann konvergiert $\sum\limits_{k = 1}^\infty a_k$ absolut.
+\subsubsection*{Minorantenkriterium}
+$\sum\limits_{k = 1}^\infty c_k$ konvergent mit $\forall k \in \N: c_k \geq 0$. Wenn für $\sum\limits_{k = 1}^\infty a_k \exists k_0 \in \N$, sodass $\forall k \geq k_0$  gilt $a_k \geq c_k$, dann divergiert $\sum\limits_{k = 1}^\infty a_k$
+\subsubsection*{Wurzelkriterium}
+%hier könnte nur die Limesform ausreichen %entfernen
+\begin{enumerate}
+    \item Wenn festes $q \in \R$ mit $0 < q < 1$ und $k_0 \in \N$ existiert, sodass $\forall k \geq k_0: \sqrt[k]{|a_k|} \leq q$, dann konvergiert $\sum\limits_{k = 1}^\infty a_k$ absolut
+    \item $\exists k_0 \in \N$, sodass $\forall k \geq k_0: \sqrt[k]{|a_k|} \geq 1$, dann divergiert $\sum\limits_{k = 1}^\infty a_k$
+\end{enumerate}
+Limesform:\\
+Existiert $a = \lim\limits_{k = \infty} \sqrt[k]{|a_k|}$, dann gilt:
+\begin{itemize}[leftmargin = *, noitemsep]
+    \item $a < 1 \Ra$ absolut konvergent
+    \item $a > 1 \Ra$ divergent 
+    \item $a = 1 \Ra$ unwissend
+\end{itemize}
+\subsubsection*{Quotientenkriterium}
+\begin{enumerate}[label=\alph*., noitemsep]
+    \item Wenn festes $q \in \R$ mit $0 < q < 1$ und $k_0 \in \N$ existiert, sodass $\forall k \geq k_0: a_k \neq 0 \land \left| \frac{a_{k+1}}{a_k} \right| \leq q$, dann konvergiert $\sum\limits_{k = 1}^\infty a_k$ absolut.
+    \item $\exists k_0 \in \N$, sodass $\forall k \geq k_0: a_k \neq 0 \land \left| \frac{a_{k+1}}{a_k} \right| \geq 1$, dann divergiert $\sum\limits_{k = 1}^\infty a_k$
+\end{enumerate}
+Limesform:\\
+Existiert $a = \lim\limits_{k \ra \infty} \left| \frac{a_{k+1}}{a_k} \right|$, dann gilt:
+\begin{itemize}[leftmargin=*, noitemsep]
+    \item $a < 1 \Ra$ konvergiert
+    \item $a > 1 \Ra$ divergiert
+    \item $a = 1 \Ra $ unwissend 
+\end{itemize}
+\subsection*{Potenzreihen}
+\subsubsection*{Definition}
+Folge $(a_k)$, $x, x_0 \in \R$, dann Potenzreihe $P(x, x_0)$ mit Entwicklungspunkt $x_0$ definiert als: $P(x, x_0) = \sum\limits_{k = 0}^\infty a_k \cdot (x - x_0)^k$. Häufig $x_0 = 0$, dann $P(x, 0) = \sum\limits_{k = 0}^\infty a_k \cdot x^k$.
+\subsubsection*{Konvergenz von Potenzr.}
+\begin{enumerate}[label=\alph*., noitemsep]
+    \item $P(x, x_0)$ konvergent in $c \Ra$ konvergiert absolut $\forall x: |x - x_0| < |c - x_0|$
+    \item Konvergiert $P(x, x_0)$ in $c$ nicht absolut, dann divergiert $P(x, x_0) \forall |x - x_0| > |c - x_0|$
+\end{enumerate}
+\subsubsection*{Def. Konvergenzradius}
+Sei $P(x, x_0)$ Potenzreihe. $\exists r \in \R_{\geq 0}$, dass $P(x, x_0)$ $\forall |x- x_0| < r$ konvergiert und $\forall |x - x_0| > r$ divergiert, dann ist $r$ der Konvergenzradius.
+\subsection*{Exponentialreihe}
+\subsection*{Definition}
+$\exp(x) = \sum\limits_{k = 0}^\infty \frac{x^k}{k!}$. Es gilt $e := \exp(1)$.
+\subsubsection*{Konvergenz von Exp.Reihen.}
+$\forall x \in \R: \exp(x)$ absolut konvergent.
+\subsubsection*{Eigenschaften}
+\begin{enumerate}[label=\alph*., noitemsep]
+    \item $\forall x, y \in \R: \exp(x + y) = \exp(x) \cdot \exp(y)$
+    \item $\forall x \in \R: \exp(-x) = \frac{1}{\exp (x)}$
+    \item $\forall x \in \R: \exp(x) > 0$
+    \item $\forall n \in \Z: \exp(n) = e^{n}$ 
+\end{enumerate}
+\subsection*{\texorpdfstring{$\exp$}{Exponentialfunktion} als Folgengrenzwert}
+Es gilt $\forall x \in \R$: $\exp(x) = \sum\limits_{k = 0}^\infty \frac{x^k}{k!} = \lim\limits_{n \ra n} \left(1 + \frac{x}{n}\right)^n$. Für $x = 1$ gilt besonders: $e = \sum\limits_{k = 0}^\infty \frac{1}{k!} = \lim\limits_{n \ra \infty}\left(1 + \frac{1}{n}\right)^n$
+

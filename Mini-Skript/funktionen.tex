@@ -1,0 +1,198 @@
+\subsection*{Definition}
+$A, B$ nichtleere Mengen.Funktion $f$ ordnet jedem $x \in A$ eindeutig $y \in B$ zu. Schrift:$A \ra B$. Zugeordnetes Element auch als $f(x)$.\\
+$A$ Definitionsbereich\\
+$B$ Bild-/Zielbereich\\
+$f(A) \subseteq B$ Bildmenge/Bild von $f$
+\subsection*{Injektiv, ...}
+\begin{enumerate}[label=\arabic*., noitemsep]
+    \item Injektiv: $x_1 \neq x_2 \Ra f(x_1) \neq f(x_2)$
+    \item Surjektiv: $\forall y \in B \ \exists x \in A: f(x) = y$
+    \item Bijektiv: Injektiv + Surjektiv
+\end{enumerate}
+
+\subsection*{Rechenregeln}
+Sei $f, g: A \ra \R$ Funktionen und $c \in \R$. Dann gilt:
+\begin{itemize}[noitemsep]
+    \item $(f + g)(x) := f(x) + g(x)$
+    \item $(cf)(x) := c f(x)$
+    \item $(f \cdot g)(x) := f(x) \cdot g(x)$
+    \item Sei $A':=\{x \in A| g(x) \neq 0\}$, dann Funktion $\frac{f}{g}: A' \ra \R$ definiert: $\left(\frac{f}{g}\right)(x) := \frac{f(x)}{g(x)}$
+    \item $f(A) \subseteq B \Ra (g \circ f)(x) := g(f(x))$
+\end{itemize}
+\subsection*{Umekehrfunktion}
+$f^{-1}: B \ra A$ Umkehrfunktion von $f$, falls:
+\begin{itemize}[leftmargin=*, noitemsep]
+    \item $(f^{-1} \circ f) (x) = f^{-1}(f(x)) = x, \forall x \in A$
+    \item $(f \circ f^{-1})(x) = f(f^{-1}(x)) = x, \forall x \in B$
+\end{itemize}
+\subsubsection*{Bijektiv-Umkehrfunktion}
+Für $f: A \ra B$ existiert $f^{-1}$, g.d.w. $f$ bijektiv.
+\subsubsection*{Monotonie Umkehrfunktion}
+$A \subseteq \R$, $f: A \ra B$ Funktion mit $B := f(A) \subseteq \R$. $f$ streng monoton $\Ra$ $f^{-1}:B \ra A$ existiert + streng mon. (im g. Sinne)
+\subsection*{Beschränktheit}
+$f: A \ra B$ heißt nach oben/unten Beschränkt, wenn Bildmenge $f(A)$ oben/unten beschränkt.
+\subsection*{Monotonie}
+Sei $A \subseteq \R$, $f: A \ra \R$, dann
+\begin{itemize}[leftmargin=*, noitemsep]
+    \item mon. wachsend: $f(x) \leq f(x')$
+    \item streng mon. wachs.: $f(x) < f(x')$
+    \item mon. fallend: $f(x) \geq f(x')$
+    \item streng mon. fall.: $f(x) > f(x')$
+\end{itemize}
+$\forall x, x' \in A$ mit $x < x'$.
+\subsection*{Berührpunkt}
+$A \subseteq \R$, $a \in \R$, Dann ist $a$ Berührpunkt von $A$, falls $\forall \varepsilon \in \R, \varepsilon > 0 \ \exists b \in  (a - \varepsilon, a + \varepsilon): b \in A$
+\subsection*{Grenzwerte Funktionen}
+Sei $f: A\in \R \ra \R$ und $a \in \R$ Berührpunkt von $A$. $\lim\limits_{n \ra \infty} x_n = a \Ra \lim\limits_{n \ra \infty} f(x_n) = c.$\\
+Analog definieren wir:
+ $\lim\limits_{x \ra \infty} f(x) = c$, wenn $A$ oben/unten unbeschränkt und $\forall (x_n)$ mit $\lim\limits_{n \ra \infty} x_n = \pm\infty$ gilt $\lim\limits_{n \ra \infty} f(x_n) = c$\\
+ \begin{enumerate}[label=\arabic*., noitemsep]
+     \item Rechtsseitiger Grenzwert: $\lim\limits_{n \searrow a} f(x) = x$, wenn $a$ Berührpunkt von $A \cap (a, \infty)$ und $\forall$ $(x_n)$ mit $x_n \in A$, $x_n > a$ und $\lim\limits_{n \ra \infty} x_n = a$ gilt: $\lim\limits_{n \ra \infty} f(x_n) = c$
+     \item Linksseitiger Grenzwert: $\lim\limits_{n \nearrow a} f(x) = x$, wenn $a$ Berührpunkt von $A \cap (a, \infty)$ und $\forall$ $(x_n)$ mit $x_n \in A$, $x_n < a$ und $\lim\limits_{n \ra \infty} x_n = a$ gilt: $\lim\limits_{n \ra \infty} f(x_n) = c$
+ \end{enumerate}
+\subsection*{Satz 4.20}
+$\lim\limits_{x \ra a} f(x) = f(a) \eq \lim\limits_{x \nearrow a} f(x) = \lim\limits_{x \searrow a} f(x) = f(a)$
+\subsection*{Stetigkeit}
+Sei $f: A \ra \R$ Funktion und $a \in A$. $f$ stetig in $a$, falls $\lim\limits_{x \ra a} f(x) = f(a)$. $f$ stetig, falls $f$ in jedem Punkt aus $A$ stetig.
+\subsubsection*{\texorpdfstring{$\varepsilon$}{Epsilon}-\texorpdfstring{$\delta$}{Delta}-Kriterium}
+Sei $A \subseteq \R$ und $f: A \ra \R$ funktion. $f$ ist g.d. in $a \in A$ stetig, wenn: $\forall \varepsilon > 0 \ \exists \delta > 0 \ \forall x \in A: |x- a| < \delta \Ra |f(x) - f(a)| \varepsilon$
+\subsubsection*{Operationen Stetigkeit}
+$f, g: A \ra \R$ in $a \in A$ stetig und $c \in \R$. Dann auch folgendes in $a$ stetig:
+\begin{enumerate}[label=\alph*., noitemsep]
+    \item $f + g: A \ra \R$
+    \item $c \cdot f: A \ra \R$
+    \item $f \cdot g: A \ra \R$
+    \item $\frac{f}{g}: A' \ra \R$, falls $g(a) \neq 0$
+    \item $g \circ f: A \ra \R$, falls $f$ in $a$ und $g$ in $f(a) = b$ stetig
+\end{enumerate}
+\subsection*{Zwischenwertsatz}
+Sei $f: [a, b] \ra \R$ stetig mit $f(a) \lessgtr 0 \lessgtr f(b)$, dann $\exists x \in (a, b)$ mit $f(c)= 0$.\\
+Allgemeiner: $\forall y \in\R$: Wenn $f(a) \lessgtr y \lessgtr f(b)$, dann $\exists d \in (a, b):$ $f(d) = y$
+\subsection*{Umekehrfunk. stet. Funk.}
+Sei $I \subseteq\R$ Intervall und $f: I \ra \R$ stetig + streng monoton. Dann bildet $f$ $I$ bijektiv auf $f(I)$ ab und $f^{-1}: f(I)\ra \R$ ist stetig.
+\subsection*{Min,Max-kompakt. Interv.}
+Auf $[a, b]$ jede stetige Funktion $f: [a, b] \ra \R$ beschränkt und nimmt Min/Max an.
+\subsection*{Gleichmäßige Stetigkeit}
+$f: A \ra \R$ gleichmäßig stetig wenn: $\forall \varepsilon > 0 \ \exists \delta > 0 \ \forall x, y \in A: |x - y| < \delta \Ra |f(x) - f(y)| < \varepsilon$\\
+$f: A \ra \R$ auf $[a, b] \in A$ stetig $\Ra$ dort auch gleichm. stetig.
+\subsection*{Polynom}
+Polynomfunktion: $p(x) = a_n x^n + ... + a_1 x + a_0$. $Grad(p) = \max(n)$, wo $a_n \neq 0$
+\subsection*{Rationale Funktion}
+$p, q$ Polynome und $A = \{x \in \R| q(x) \neq 0\}$, dann ist $r: A \ra \R$ mit $r(x) = \left(\frac{p}{q}\right)(x) = \frac{p(x)}{q(x)}$ rationale Funktion
+\subsection*{Polynomdivision}
+\polyset{style=C, div=:,vars=x}
+\polylongdiv{x^2 - x + 1}{x-1}
+\subsection*{Linearfaktoren}
+Polynom $p(x)$ genau dann ohne Rest durch $q(x) = x - x_1$ teilbar, wenn $x_1 \in \R$ Nullstelle von $p(x)$.
+\subsection*{Exponentialfunktionen}
+$\exp: \R \ra \R_{> 0}$: $\exp(x) = \sum\limits_{k = 0}^{\infty} \frac{x^k}{k!}$
+\subsubsection*{Eigenschaften \texorpdfstring{$\exp$}{Exponential}-Funktion}
+\begin{enumerate}[label=\alph*., noitemsep]
+    \item $\exp(x + y) = \exp(x) \cdot \exp(y)$
+    \item $\exp(-x) = \frac{1}{\exp(x)}$
+    \item $\exp(x) > 0$
+    \item $\forall n \in \Z: \exp(n) = e^n$
+    \item $\exp(x) = \lim\limits_{n \ra \infty} (1 + \frac{x}{n})^n$
+    \item streng mon. wachsend + bijektiv
+    \item $\lim\limits_{x \ra 0} \frac{\exp(x) - 1}{x} = 1$
+\end{enumerate}
+\subsubsection*{1. Satz vom Wachstum}
+Für beliebige $n \in \N_{0}$ gilt:
+\begin{itemize}[noitemsep]
+    \item $\lim\limits_{x \ra \infty} \frac{\exp(x)}{x^n} = \infty$
+    \item $\lim\limits_{x \ra - \infty} \exp(x) x^n = 0$
+\end{itemize}
+\subsection*{Logarithmus}
+Umkehrfunktion von $\exp(x)$ ist natürlicher Logarith. $\ln: \R_{>0} \ra \R$
+\subsubsection*{Eigenschaften \texorpdfstring{$\ln(x)$}{des Logarithmus}}
+\begin{enumerate}[label=\alph*., noitemsep]
+    \item $\ln(\exp(x)) = \exp(\ln(x)) = x$
+    \item $\ln(1) = 0$ und $\ln(e) = 1$
+    \item \[\ln(x) \begin{cases}
+    < 0 &, x \in (0, 1)\\
+    = 0 &, x = 1\\
+    > 0 &, x > 1
+    \end{cases}\]
+    \item $\ln(xy) = \ln(x) + \ln(y)$
+    \item $n \in \Z: \ln(x^n) = n \ln(x)$
+    \item $\ln(x)$ ist stetig
+\end{enumerate}
+\subsubsection*{2. Satz vom Wachstum}
+$\forall n \in \N$ gilt: $\lim\limits_{x \ra \infty} \frac{\ln(x)}{\sqrt[n]{x}} = 0$. $\ln(x)$ wächst schwächer als $\sqrt[n]{x}$
+\subsection*{allgemeine Exponentialfunktion}
+Sei $a \in \R_{> 0}$.$\exp_a: \R\ra \R: \exp_a(x) := \exp(x \ln(a))$. Schreiben auch $a^x$ statt $\exp_a(x)$.
+\subsection*{Eigenschaften allg. Potenzen}
+\begin{enumerate}[label=\alph*., noitemsep]
+    \item $a^x = \exp_a(x)$ stetig $\forall x \in \R$
+    \item $\forall n \in \Z$: $\exp_a(x) = a^n$
+    \item $a^{x+y} = a^x a^y$
+    \item $(a^x)^y = a^{xy}$
+    \item $a^x b^x = (ab)^x$
+    \item $\forall p \in \Z, q \in \N\backslash\{1\}: a^{\frac{p}{q}} = \sqrt[q]{a^p}$
+\end{enumerate}
+\subsection*{Log zu allg. Basen}
+Sei $a \in \R_{> 0}\backslash\{1\}$, dann $\log_a: \R_{> 0} \ra \R:$ $\log_a(x) := \frac{\ln(x)}{\ln(a)}$
+\subsection*{Funktionssymmetrie}
+\begin{itemize}[noitemsep]
+    \item achsen(gerade): $f(-x) = f(x)$
+    \item punkt(ungerade):$f(-x) = -f(x)$
+\end{itemize}
+\subsection*{Hyperbolische Funktionen}
+\begin{itemize}[noitemsep]
+    \item $\cosh(x) := \frac{e^x + e^{-x}}{2}$
+    \item $\sinh(x) := \frac{e^x - e^{-x}}{2}$
+    \item $\tanh(x) := \frac{\sinh(x)}{\cosh(x)} = \frac{e^x - e^{-x}}{e^{-x}  + e^x}$
+\end{itemize}
+\subsubsection*{Eigensch. hyperb. Funkt}
+\begin{enumerate}[label=\alph*., noitemsep]
+    \item $\exp(x) = \cosh(x) + \sinh(x)$
+    \item $\cosh^2(x) - \sinh^2(x) = 1$
+    \item $\cosh(x) = \sum\limits_{k = 0}^{\infty} \frac{x^{2k}}{(2k)!}$
+    \item $\sinh(x) = \sum\limits_{k = 0}^{\infty} \frac{x^{2k+1}}{(2k + 1)!}$
+    \item $\cosh(x + y) = \cosh(x)\cosh(y) + \sinh(x) \sinh(y)$
+    \item $\sinh(x + y) = \sinh(x) \cosh(y) + \sinh(x) \cosh(y)$
+\end{enumerate}
+\subsection*{komplexe \texorpdfstring{$\exp$}{Exponential}-Funktion}
+$\exp: \C \ra \C$ mit $\exp(z) = e^z = \sum\limits_{k = 0}^\infty \frac{z^k}{k!}$
+\subsection*{Trigonom. Funktionen}
+$\sin/\cos: \R \ra \R$, $\tan: \{x| \cos(x) \neq 0\} \ra \R$
+\begin{itemize}[noitemsep]
+    \item $\cos(x) := \text{Re}(e^{ix}) = \frac{e^{ix} + e^{-ix}}{2}$
+    \item $\sin(x) := \text{Im}(e^{ix}) = \frac{e^{ix} - e^{-ix}}{2}$
+    \item $\tan(x) := \frac{\sin(x)}{\cos(x)} = \frac{ie^{-ix} - ie^{ix}}{e^{-ix} + e^{ix}}$
+\end{itemize}
+\subsubsection*{Eigenschaften trig. Funkt.}
+\begin{enumerate}[label=\alph*., noitemsep]
+    \item $\exp(ix) = \cos(x) + i \sin(x)$
+    \item $\cos^2(x) + \sin^2(x) = 1$
+    \item $|\sin(x)| \leq 1$ und $|\cos(x)| \leq 1$
+    \item $\cos(x) = \sum\limits_{k = 0}^\infty (-1)^k \frac{x^{2k}}{(2k)!}$
+    \item $\sin(x) = \sum\limits_{k = 0}^{\infty} (-1)^k \frac{x^{2k +1}}{(2k + 1)!}$
+    \item $\cos(x + y) = \cos(x) \cos(y) - \sin(x) \sin(y)$
+    \item $\sin(x + y) =  \sin(x) \cos(y) + \cos(x)\sin(y)$
+\end{enumerate}
+\subsubsection*{Abschätzung Sin-Cos}
+Für $x \in (0, 2]$ gilt:
+\begin{itemize}[leftmargin=*, noitemsep]
+    \item $1 - \frac{x^2}{2} < \cos(x) < 1 - \frac{x^2}{2} + \frac{x^4}{4!}$
+    \item $x - \frac{x^3}{3!} < \sin(x) < x$
+\end{itemize}
+\subsubsection*{Folgerung Def. Pi}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{m{1.1em}m{0.2em}m{0.2em}m{0.2em}m{0.2em}m{0.2em}m{0.2em}m{0.2em}m{0.2em}}
+    $x$ & $0$& $\frac{\pi}{6}$ & $\frac{\pi}{4}$ & $\frac{\pi}{3}$ & $\frac{\pi}{2}$ & $\pi$ & $\frac{3\pi}{2}$ & $2\pi$ \\\hline
+    $\cos $ & $1$ & $\frac{\sqrt{3}}{2}$       & $\frac{1}{\sqrt{2}}$ & $\frac{1}{2}$        & $0$  & $-1$ & $0$  & $1$ \\\hline
+    $\sin $ & $0$ & $\frac{1}{2}$              & $\frac{1}{\sqrt{2}}$ & $\frac{\sqrt{3}}{2}$ & $1$  & $0$  & $-1$ & $0$ \\\hline
+    $\tan $ & $0$ & $\frac{1}{\sqrt{3}}$       & $1                 $ & $\sqrt{3}$           & $-$    & $0$   & $-$   & $0$\\
+\end{tabular}
+Allgemein gilt für alle $x \in \R$:
+$\cos(x + \pi/2) = \in(x + \pi) =  - \sin(x)$\\
+$\cos(x + 2 \pi) = \sin(x + \pi/2) = \cos(x)$
+$\cos(x + \pi) = -\cos(x)$\\
+$\sin(x + 2\pi) = \sin(x)$
+\renewcommand{\arraystretch}{0.5}
+\subsection*{Periodische Funktionen}
+$f: \R \ra \R$ heißt periodische Funktion, wenn $\exists p > 0$, sodass $f(x) = f(x + p), \forall x \in \R$.\\
+$\min(p) \in \R_{>0}$ heißt Periode.
+\subsection*{Polarkoordinaten \texorpdfstring{$\C$}{komplexer Zahlen}}
+$\forall z \in \C \ \exists \phi \in \R$, sodass $z = |z|e^{i \phi} = |z| \cos(\phi) + i |z| \sin(\phi)$. Für $z \neq 0$ ist $\phi$ bis auf eine Addition mit Vielfachen von $2 \phi$ eindeutig. Das Paasr $(|z|, \phi)$ bezeichnet wir als Polarkoordinaten von $z$ und $\phi$ als Argument von $z$.

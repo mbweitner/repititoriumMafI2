@@ -1,0 +1,66 @@
+\documentclass[a4paper, 8pt]{extarticle} %%%%%%%%%%%%%%%%
+\input{packages}
+\usepackage[ngerman]{babel}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+\usepackage[
+  %showframe,% Seitenlayout anzeigen
+  left=0.5cm,
+  right=0.5cm,
+  top=0.5cm,
+  bottom=0.5cm,
+]{geometry}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\input{macros} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%% NUR hier drunter editieren %%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\allowdisplaybreaks
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Hier beginnen die Aufgaben %%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{multicol}
+\usepackage{titlesec}
+\usepackage{changepage}
+\begin{document}
+\setlength{\abovedisplayskip}{0.5pt}
+\setlength{\belowdisplayskip}{0.5pt}
+\renewcommand{\arraystretch}{0.5}
+\setlist{leftmargin=0.4cm}
+\titlespacing*{\section}
+{0pt}{-2pt}{-2pt}
+\titlespacing*{\subsection}
+{0pt}{-2pt}{-2pt}
+\titlespacing*{\subsubsection}
+{0pt}{-2pt}{-2pt}
+
+
+
+\hfill Maximilian Fischer 123456%Hier sollte dein Name und deine Matrikelnummer stehen
+\begin{multicols*}{4}
+\section*{Grundlagen}
+\input{grundlagen}
+\section*{Zahlenmengen}
+\input{zahlenmengen}
+\section*{Folgen}
+\input{folgen}
+\section*{Reihen}
+\input{reihen}
+\section*{Funktionen}
+\input{funktionen}
+\section*{Differentialrechnung}
+\input{differentialrechnung}
+\section*{Integralrechnung}
+\input{integralrechnung}
+\end{multicols*}
+\end{document}
+

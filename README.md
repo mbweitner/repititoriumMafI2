@@ -1,3 +1,9 @@
+### Mafi2 Mini Skript
+
+Das Miniskript enhtält alle Sätze und Definitionen des Skriptes aus der Vorlesung. Das ganze befindet sich im Klausurzettelformat, dadurch kann es als Vorlage für einen Klausurzettel dienen. 
+
+[Aktuelle PDF-Version](https://github.com/mbweitner/repititoriumMafI2/raw/main/Mini-Skript/main.pdf)
+
 # Mafi2 Repititorium Sommersemester 2022
 
 ## [Aktuelles PDF-Dokument](https://github.com/mbweitner/repititoriumMafI2/raw/main/Repititorium/main.pdf)

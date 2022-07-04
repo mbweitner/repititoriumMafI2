@@ -1,0 +1,95 @@
+\subsection*{Definition}
+Eine Folge ist eine Abbildung, bei der jedem $n \in \N$ ein $a_n\in\R$ zugeordnet wird. Schreibweise: $(a_n)$ oder $(a_n)_{n \in \N}$
+\subsection*{Def. Konvergenz, Divergenz}
+Folge $(a_n)$ ist konvergent, wenn gilt:
+$\forall \varepsilon > 0 \ \exists n_0 \in \N \ \forall n \geq n_0: |a_n -a | < \varepsilon$\\
+\begin{enumerate}[label=\arabic*., noitemsep]
+    \item nicht konvergent $\Ra$ divergent
+    \item Falls $(a_n)$ gegen $a$ konvergiert, so ist $a$ Grenzwert von $(a_n)$. Schreibweise: $\lim\limits_{n \rightarrow \infty} a_n = a$ oder $a_n \ra a$ für $n \ra \infty$
+    \item Falls $\lim\limits_{n \rightarrow \infty} a_n = 0 \Ra$ Nullfolge 
+\end{enumerate}
+\subsubsection*{Eindeutigkeit Grenzwerts}
+Der Grenzwert einer Folge ist, falls er existiert eindeutig!
+\subsubsection*{Divergenz inverser Nullfolge}
+Ist Folge $(a_n)$ Nullfolge mit $a_n \neq 0$, dann ist Folge $(b_n) = \frac{1}{a_n}$ divergent.
+\subsubsection*{Bestimmte Divergenz}
+Folge $(a_n)$ ist bestimmt divergent gegen $\infty/-\infty$, wenn $b_n = \frac{1}{a_n}$ eine Nullfolge ist und $\exists n_0 \in \N \forall n \geq n_0: a_n \lessgtr 0$. Wir schreiben:\\
+$\lim\limits_{n \ra \infty} a_n = \infty/-\infty$
+\subsubsection*{Beschränkte Folge}
+Folge $(a_n)$ nach oben (unten) beschränkt, wenn Menge $M = \{a_n | n \in \N\}$ nach oben (unten) beschränkt ist.\\
+Ist $(a_n)$ nach oben und unten beschränkt so heißt sie beschränkt.
+\subsubsection*{Konvergenz \texorpdfstring{$\Rightarrow$}{folglich} Beschränkt}
+Jede Konvergente Folge ist beschränkt.
+\subsection*{Monotonie}
+Folge $(a_n)$ heißt:
+\begin{itemize}[noitemsep]
+    \item monoton wachsend: \\
+    $a_n \leq a_{n+1} \forall n \in \N$
+    \item streng monoton wachsend:\\
+    $a_n < a_{n+1} \forall n \in \N$
+    \item monoton fallend:\\
+    $a_n \geq a_{n+1} \forall n \in \N$
+    \item streng monoton fallend:\\
+    $a_n > a_{n+1} \forall n \in \N$
+\end{itemize}
+\subsubsection*{Monoton \texorpdfstring{$+$}{plus} Beschränkt \texorpdfstring{$\Rightarrow$}{folglich} Konvergenz}
+Jede beschränkte montone FOlge ist konvergent.
+\begin{enumerate}[label=\alph*., noitemsep]
+    \item $(a_n)$ monoton wachsend $+$ oben beschränkt $\Ra$ konvergent. Es gilt $\lim\limits_{n\ra \infty} a_n= \sup \{a_n|n \in \N\}$
+    \item $(a_n)$ monoton fallend $+$ unten beschränkt $\Ra$ konvergent. Es gilt $\lim\limits_{n\ra \infty} a_n= \inf \{a_n|n \in \N\}$
+\end{enumerate}
+\subsection*{Rechenregeln}
+Seien $(a_n)_{n \in \N}, (b_n)_{n \in \N}$ konvergente Folgen und $c\in \R$
+\begin{enumerate}[label=\alph*., noitemsep]
+    \item $(a_n) + (b_n) = (a_n + b_n)$
+    \item $c \cdot (a_n) = (c \cdot a_n)$
+    \item $(a_n) \cdot (b_n) = (a_n \cdot b_n)$
+    \item $\frac{(a_n)}{(b_n)} = \left( \frac{a_n}{b_n} \right)$, falls $b_n \neq 0$
+    \item $\lim\limits_{n \ra \infty} (a_n + b_n) = \lim\limits_{n \ra \infty} (a_n) + \lim\limits_{n \ra \infty} (b_n)$
+    \item $\lim\limits_{n \ra \infty} c \cdot (a_n) = c \cdot \lim\limits_{n \ra \infty} (a_n)$
+    \item $\lim\limits_{n \ra \infty} (a_n) \cdot (b_n) = \lim\limits_{n \ra \infty} (a_n) \cdot \lim\limits_{n \ra \infty} (b_n)$
+    \item $\lim\limits_{n \ra \infty} \frac{(a_n)}{(b_n)} = \frac{\lim\limits_{n \ra \infty} (a_n)}{\lim\limits_{n \ra \infty} (b_n)}$, falls $b_n \neq 0$ und $\lim\limits_{n \ra \infty} b_n \neq 0$
+\end{enumerate}
+\subsection*{Größenvergl. konv. Folgen}
+Seien $(a_n), (b_n)$ konvergente Folgen mit $(a_n) \leq (b_n)$ Dann gilt: $\lim\limits_{n \ra \infty} (a_n) \leq \lim\limits_{n \ra \infty} (b_n)$
+\subsection*{Sandwich-Theorem}
+Seien $(a_n), (b_n), (c_n)$ Folgen, für die $\exists n_0$, sodass $n \geq n_0$ gilt: $(a_n) \leq (b_n) \leq (c_n)$.\\
+Wenn $(a_n), (c_n)$ konvergent und gilt $\lim\limits_{n \ra \infty} (a_n) = \lim\limits_{n \ra \infty} (c_n)$, dann ist auch $(b_n)$ konvergent und es gilt:\\
+$\lim\limits_{n \ra \infty} (a_n) = \lim\limits_{n \ra \infty} (b_n) = \lim\limits_{n \ra \infty} (c_n)$
+\subsection*{Teilfolgen}
+\subsubsection*{Grenzwert Teilfolge}
+Jede Teilfolge $(a_{n_k})$ einer konvergenten Folge $(a_n)$ ist konvergent. Es gilt: $\lim\limits_{k \ra \infty} a_{n_k} = \lim\limits_{n \ra \infty} a_n = a$
+\subsubsection*{Divergenz durch Teilfolge}
+Besitzt eine FOlge $(a_n)$
+\begin{enumerate}[label=\alph*., noitemsep]
+    \item eine divergente Teilfolge
+    \item zwei konvergente Teilfolgen $(a_{n_k}), (a_{n_l})$ mit $\lim\limits_{k \ra \infty} \neq \lim\limits_{l \ra \infty} (a_{n_l}$
+\end{enumerate}
+so ist die Folge divergent.
+\subsubsection*{Satz 3.29}
+Jede Folge enhtält eine monotone Teilfolge
+\subsubsection*{Balzano-Weierstraß}
+Jede beschränkte Folge $(a_n)$ besitzt eine konvergente Teilfolge.
+\subsubsection*{Häufungspunkt}
+Für $(a_n)$ heißt $a$ Häufungspunkt, wenn Teilfolge $(a_{n_k})$ existiert und $\lim\limits_{k \ra \infty} (a_{n_k}) = a$
+\subsection*{Cauchy-Folge}
+$(a_n)$ heißt Cauchy-Folge, wenn gilt:\\
+$\forall \varepsilon > 0 \ \exists n_0 \in \N \ \forall n > n_0: |a_n - a_{n_0} < \varepsilon$
+\subsubsection*{Satz 3.34}
+Folge ist genau dann konvergent, wenn sie eine Cauchy-Folge ist. Das bedeutet:
+\begin{enumerate}[label=\alph*., noitemsep]
+    \item Jede konvergente Folge ist eine Cauchy-Folge
+    \item Jede Cauchy-Folge ist konvergent
+\end{enumerate}
+\subsection*{Intervallle}
+\subsubsection*{Kompaktheit}
+Intervall $I$ heißt kompakt, wenn es abgeschlossen und beschränkt ist.
+\subsubsection*{Intervalschachtelung}
+Eine FOlge $(I_n)$ von abgeschlossenen Intervallen $I_n$ heißt Intervallschachtelung, wenn gilt:
+\begin{itemize}[noitemsep]
+    \item $\forall n \in \N: I_{n+1} \subset I$
+    \item $\lim\limits_{n \ra \infty} |I_n| = 0$
+\end{itemize}
+\subsubsection*{Konvergenz Intervalschachtelung}
+Für jede Intervallschachtelung $(I_n)$ existiert genau ein eindeutiges $x \in \R$, für das gilt: $x \in I, \forall n \in \N$\\
+Wir sagen auch: die Intervallschachtelung konvergiert gegen $x$.

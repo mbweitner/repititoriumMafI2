@@ -1,0 +1,69 @@
+\subsection*{Aussagenlogik}
+
+\subsubsection*{äquivalente Aussagen}
+\begin{adjustwidth}{-0.3cm}{0pt}
+\begin{align*}
+    \begin{array}{l}
+        \neg(\neg A) \eq A \text{ dop. Negation} \\
+        A \land (A \lor B)  \text{ Absorpition} \\
+        \text{Kommutativität} \\
+        A \land B \eq B \land A \\ 
+        A \lor B \eq B \lor A \\ \text{} \\
+        \text{de Morgan} \\
+        \neg (A \land B)    \eq \neg A \lor \neg B \\ 
+        \neg (A \lor B)     \eq \neg A \land \neq B \\ \text{} \\
+        \text{Assoziativität} \\
+        A \lor (B \lor C)   \eq (A \lor B) \lor C \\ 
+        A \lor (B \land C)  \eq (A \lor B) \land (A \lor C) \\ \text{Distributivität} \\
+        A \land (B \land C) \eq (A \land B) \land C \\ \text{} \\
+        A \land (B \lor C)  \eq (A \land B) \lor (A \land C) \\ \text{} \\
+    \end{array}
+\end{align*}
+\end{adjustwidth}
+
+\subsubsection*{All- und Existenzquantor}
+\underline{All-Quantor}: $\forall$\\
+\glqq Für alle $n$ aus $M$ gilt: $A(n)$\grqq\\
+$\forall n \in M: A(n)$\\
+\underline{Existenz-Quantor}:\\
+\glqq Es existiert mindestens ein $n$ aus $M$, für das gilt: $A(n)$\grqq\\
+$\exists n \in M: A(n)$
+\subsection*{Mengen}
+
+\subsubsection*{Mengenverknüpfungen}
+\begin{align*}
+    \begin{array}{l}
+        \text{Vereinigung}\\
+        A\cup B := \{m | m \in A \lor m \in B\}\\
+        \text{Schnitt}\\
+        A \cap B := \{m | m \in A \land m \in B\}\\
+        \text{Differenz}\\
+        A \backslash B := \{m | m \in A \land m \notin B\}\\
+        \text{Kartesisches Produkt}\\
+        A \times B := \{(m, n) | m \in A \land n \in B\}\\
+        \text{Verallgemeinerung Vereinigung}\\
+        \bigcup_{M \in \mathcal{N}} M := \{m | \exists M \in \mathcal{N}: m \in M\}\\
+        \text{Verallgemeinerung Schnitt}\\
+        \bigcap_{M \in \mathcal{N}} M := \{m | \forall M \in \mathcal{N}: m \in M\}\\
+        \text{Komplement}
+        A^c = U \backslash A\\
+    \end{array}
+\end{align*}
+\subsection*{Beweistechniken}
+\subsubsection*{Direkter Beweis}
+Folgerungen Umformungen von bereits bewiesenen Aussagen.\\
+Bei Äquivalenzen müssen beide Richtungen gezeigt werden:\\
+$(A \eq B) \eq ((A \Ra B) \land (B \Ra A))$
+\subsubsection*{Indirekter Beweis - Kontraposition}
+Beweis erfolgt indem dei Kontraposition gezeigt wird (rechte Seite)\\
+$(A \Ra B) \eq (\neq B \Ra \neq B)$\\
+\subsubsection*{Widerspruchbeweis}
+Zeige, dass die gegenteilige Aussage zu einer Falschen Aussage führt. Ist dies der Fall, so gilt A.\\
+$((\neg A \Ra C) \land \neq C) \Ra A$
+\subsubsection*{Vollständige Induktion}
+\begin{enumerate}[noitemsep]
+    \item IA: Beweise $A(n = 1)$
+    \item IV: Für ein beliebiges aber festes $n \in \N$ gilt $A(n)$
+    \item IS: Beweise $A(n) \Ra A(n+1)$
+\end{enumerate}
+

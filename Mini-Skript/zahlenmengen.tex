@@ -1,0 +1,126 @@
+\subsection*{Körper}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Hier nochmal drüber schauen viellecht passt es ja %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Hier könnten vielleicht noch die Körperaxiome und die Folgerungen daraus hin. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%Hier nochmal drüber schauen viellecht passt es ja %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Bruchrechenregeln}
+\begin{enumerate}[label=\alph*., noitemsep]
+    \item $\frac{a}{b} = \frac{c}{d} \eq ad = bc$
+    \item $\frac{ae}{be} = \frac{a}{b}$
+    \item $\frac{a}{b} \pm \frac{c}{d} = \frac{ad \pm bc}{bd}$
+    \item $\frac{\frac{a}{b}}{\frac{e}{d}} = \frac{ad}{be}$
+\end{enumerate}
+\subsection*{Folgerungen für Ungleichungen}
+In einem geordneten Körper $K$ gilt für beliebige Elemente $a, b, c, d \in K$ und $x \in K\backslash \{0\}$
+\begin{enumerate}[label=\alph*., noitemsep]
+    \item $(a < b) \lor (a > b) \lor (a = b)$
+    \item $(a < b) \land (b < c) \Ra a < c$
+    \item $(a < b) \land (c \leq d) \Ra a + c < b + d$
+    \item $(a < b) \land (x > 0) \Ra ax < bx$\\
+          $(a < b) \land (x < 0) \Ra ax > bx$
+    \item $a < b \eq a > - b$
+    \item $x^2 := x \cdot x > 0$
+    \item $0 < a < b \eq 0 < b^{-1} < a^{-1}$
+\end{enumerate}
+\subsection*{Betrag und Folgerungen}
+\begin{align*}
+    |x| := \begin{cases}
+    x &\text{, falls } x \geq 0\\
+    -x &\text{, falls } x < 0
+    \end{cases}
+\end{align*}
+Es gelten folgende Regeln:
+\begin{enumerate}[label=\alph*., noitemsep]
+    \item $|x| \geq 0 \land (|x| = \eq x = 0)$
+    \item $|x \cdot y| = |x| \cdot |y|$
+    \item $(|x| < \varepsilon) \eq (x < \varepsilon) \land (-\varepsilon < x) \eq (-\varepsilon < x < \varepsilon)$\\
+          $(|x| \leq \varepsilon) \eq (x \leq \varepsilon) \land (-\varepsilon \leq x) \eq (-\varepsilon \leq x \leq \varepsilon)$
+    \item $|x + y| \leq |x| + |y| (\text{Dreiecksung.})$
+    \item $||x| - |y|| \leq |x - y| (\text{umgekehrte.D.})$
+\end{enumerate}
+\subsection*{Metrik}
+Sei $A$ eine Menge. Wir nennen eine Abbildung $d:A \times A \ra \R$ eine Metrik auf $A$, wenn für alle $x, y, z \in A$ drei Eigenschaften erfüllt sind:
+\begin{enumerate}[label=\alph*., noitemsep]
+    \item Positive Definitheit
+    \begin{align*}
+        d(x, y) > 0 \text{ für } x \neq y\\
+        d(x, y) = 0 \text{ für } x = y
+    \end{align*}
+    \item Symmetrie $d(x, y) = d(y, x)$
+    \item Dreiecksungleichung
+    \begin{align*}
+        d(x, y) \leq d(x, z) + d(z, y)
+    \end{align*}
+\end{enumerate}
+Beispielmetrik: $d:\R \times \R \ra \R$ mit $d(x, y) = |x - y|$
+\subsection*{Gaußklammern}
+Sei $x \in \R$ und $m, n \in \Z$:
+\begin{enumerate}[label=\alph*), noitemsep]
+    \item $m \leq x < m+1$
+    \item $n - 1 < x \leq n$
+\end{enumerate}
+$\lfloor x \rfloor := m\quad\quad$ $\lceil x \rceil := n$
+\subsection*{Modulo}
+Sei $m, r, z \in \Z$ und $n \in \N$:
+$z = mn + r$\\
+$r = z \mod n$
+\subsection*{Komplexe Zahlen}
+
+\subsubsection*{Definition}
+$\C := \{(a, b) \in \R \times \R\}$
+Für $z = (a, b)$ ist $Re(z) := a$ der Realteil und $Im(z) := b$ der Imaginärteil
+\subsubsection*{Rechnen mit \texorpdfstring{$\C$}{Komplexen Zahlen}}
+$z_1 + z_2 := (a_1 + a_2, b_1 + b_2)$\\
+$z_1 \cdot z_2 := (a_1a_2 - b_1b_2, a_1b_2 + a_2b_1)$\\
+Nullelement $(0,0)$\\
+Einselement $(1, 0)$\\
+$-(a, b) = (-a, -b)$(Negativelement)\\
+$(a, b)^{-1} = \left(\frac{a}{a^2 + b^2}, \frac{-b}{a^2 + b^2}\right)$ (Inverses Element)
+\subsubsection*{Konjugation und Betrag}
+$\bar z := (a, -b) = a - ib$\\
+$|z| := \sqrt{z \bar z} = \sqrt{a^2 + b^2}$
+\subsubsection*{Konjugationseigenschaften und Metrik}
+$d(z_1, z_2) = |z_1 - z_2|$\\
+$\overline{z_1 \cdot z_2} = \bar z_1 \dot \bar z_2 \quad\quad$
+$\overline{z_1 + z_2} = \bar z_1 + \bar z_2$
+\subsection*{Summen, Produkte, ...}
+\subsubsection*{Def. Summe, Produkt}
+\begin{align*}
+    &\sum_{k = m}^n a_k := \begin{cases}
+    a_m + a_{m+1} +  \\
+    ... + a_n & m \leq n\\
+    0 &\text{,sonst}
+    \end{cases}\\
+    &\prod_{k = m}^{n} a_k :=\begin{cases}
+    a_m \cdot a_{m+1} \cdot  \\
+    ... \cdot a_n & m \leq n\\
+    1 &\text{, sonst}
+    \end{cases}
+\end{align*}
+\subsubsection*{Potenzen}
+$x^n := \prod\limits_{k = 1}^n x$\\
+Für $x \neq 0$: 
+$x^{-n} := \frac{1}{x^n} \quad\quad x^0 := 1$
+\subsubsection*{Rechenregeln}
+$a^n a^m = a^{n + m}\quad$
+$(a^n)^m = a^{nm}\quad$
+$a^n b^n = (a \cdot b)^n$
+\subsubsection*{Fakultät}
+$n! := \prod\limits_{k=1}^n k = 1 \cdot 2 \cdot ... \cdot n \quad\quad 0! = 1$
+\subsubsection*{Binomialkoeffizient}
+\begin{align*}
+    &\binom{n}{k} := \begin{cases}
+    \frac{n!}{(n - k)! \cdot k!} = \\
+    \frac{n \cdot (n-1)\cdot ... \cdot (n-k +1)}{k \cdot (k-1) \cdot ... \cdot 1} & n\geq k\\
+    0 & n < k
+    \end{cases}
+\end{align*}
+$\forall n, k \in \N_0: \binom{n}{k} + \binom{n}{k+1} = \binom{n +1}{k+1}$
+\subsubsection*{Binomischer Lehrsatz}
+Für $a, b \in \R$ und $n \in \N$:
+$(a + b)^n = \sum\limits_{k = 0}^n \binom{n}{k} a^{n - k}b^k$
+\subsubsection*{Bernoullische Ungleichung}
+$\forall x \in \R, x \geq -1, n \in \N_0$ gilt:
+$(1 + x)^n \geq 1 + nx$
+\subsubsection*{Satz 2.49}
+$\forall x \in \R$ mit $x \geq 0$ und $\forall n \in N$ mit $n \geq 2$ gilt
+$(1 + x)^n \geq \frac{n^2 x^2}{4}$
