@@ -1,0 +1,237 @@
+%\subsection*{Aussagenlogik}
+%
+%\subsubsection*{äquivalente Aussagen}
+%\begin{adjustwidth}{-0.3cm}{0pt}
+%\begin{align*}
+%    \begin{array}{l}
+%        \neg(\neg A) \eq A \text{ dop. Negation} \\
+%        A \land (A \lor B)  \text{ Absorpition} \\
+%        \text{Kommutativität} \\
+%        A \land B \eq B \land A \\ 
+%        A \lor B \eq B \lor A \\ \text{} \\
+%        \text{de Morgan} \\
+%        \neg (A \land B)    \eq \neg A \lor \neg B \\ 
+%        \neg (A \lor B)     \eq \neg A \land \neq B \\ \text{} \\
+%        \text{Assoziativität} \\
+%        A \lor (B \lor C)   \eq (A \lor B) \lor C \\ 
+%        A \lor (B \land C)  \eq (A \lor B) \land (A \lor C) \\ \text{Distributivität} \\
+%        A \land (B \land C) \eq (A \land B) \land C \\ \text{} \\
+%        A \land (B \lor C)  \eq (A \land B) \lor (A \land C) \\ \text{} \\
+%    \end{array}
+%\end{align*}
+%\end{adjustwidth}
+%
+%\subsubsection*{All- und Existenzquantor}
+%\underline{All-Quantor}: $\forall$\\
+%\glqq Für alle $n$ aus $M$ gilt: $A(n)$\grqq\\
+%$\forall n \in M: A(n)$\\
+%\underline{Existenz-Quantor}:\\
+%\glqq Es existiert mindestens ein $n$ aus $M$, für das gilt: $A(n)$\grqq\\
+%$\exists n \in M: A(n)$
+%\subsection*{Mengen}
+%
+%\subsubsection*{Mengenverknüpfungen}
+%\begin{align*}
+%    \begin{array}{l}
+%        \text{Vereinigung}\\
+%        A\cup B := \{m | m \in A \lor m \in B\}\\
+%        \text{Schnitt}\\
+%        A \cap B := \{m | m \in A \land m \in B\}\\
+%        \text{Differenz}\\
+%        A \backslash B := \{m | m \in A \land m \notin B\}\\
+%        \text{Kartesisches Produkt}\\
+%        A \times B := \{(m, n) | m \in A \land n \in B\}\\
+%        \text{Verallgemeinerung Vereinigung}\\
+%        \bigcup_{M \in \mathcal{N}} M := \{m | \exists M \in \mathcal{N}: m \in M\}\\
+%        \text{Verallgemeinerung Schnitt}\\
+%        \bigcap_{M \in \mathcal{N}} M := \{m | \forall M \in \mathcal{N}: m \in M\}\\
+%        \text{Komplement}
+%        A^c = U \backslash A\\
+%    \end{array}
+%\end{align*}
+%\subsection*{Beweistechniken}
+%\subsubsection*{Direkter Beweis}
+%Folgerungen Umformungen von bereits bewiesenen Aussagen.\\
+%Bei Äquivalenzen müssen beide Richtungen gezeigt werden:\\
+%$(A \eq B) \eq ((A \Ra B) \land (B \Ra A))$
+%\subsubsection*{Kontraposition}
+%Beweis erfolgt indem dei Kontraposition gezeigt wird (rechte Seite)\\
+%$(A \Ra B) \eq (\neg B \Ra \neg B)$\\
+%\subsubsection*{Widerspruchbeweis}
+%Zeige, dass die gegenteilige Aussage zu einer Falschen Aussage führt. Ist dies der Fall, so gilt A.\\
+%$((\neg A \Ra C) \land \neq C) \Ra A$
+%\subsubsection*{Vollständige Induktion}
+%\begin{enumerate}[noitemsep]
+%    \item IA: Beweise $A(n = 1)$
+%    \item IV: Für ein beliebiges aber festes $n \in \N$ gilt $A(n)$
+%    \item IS: Beweise $A(n) \Ra A(n+1)$
+%\end{enumerate}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%Rechenregeln ohne Ableitung/Integralregeln%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Rechenregeln}
+\subsection*{Bruchrechnung}
+    a) $\frac{a}{b} = \frac{c}{d} \eq ad = bc$
+    b) $\frac{ae}{be} = \frac{a}{b}$\\
+    c) $\frac{a}{b} \pm \frac{c}{d} = \frac{ad \pm bc}{bd}$
+    d) $\frac{\frac{a}{b}}{\frac{e}{d}} = \frac{ad}{be}$
+\subsection*{Ungleichungen}
+\begin{enumerate}[label=\alph*., noitemsep]
+    \item $(a < b) \lor (a > b) \lor (a = b)$
+    \item $(a < b) \land (b < c) \Ra a < c$
+    \item $(a < b) \land (c \leq d) \Ra a + c < b + d$
+    \item $(a < b) \land (x > 0) \Ra ax < bx$\\
+          $(a < b) \land (x < 0) \Ra ax > bx$
+    \item $a < b \eq a > - b$
+    \item $x^2 := x \cdot x > 0$
+    \item $0 < a < b \eq 0 < b^{-1} < a^{-1}$
+\end{enumerate}
+\subsection*{Betrag}
+\begin{align*}
+    |x| := 
+    x \text{, falls } x \geq 0\quad
+    -x \text{, falls } x < 0
+\end{align*}
+\begin{enumerate}[label=\alph*., noitemsep]
+    \item $|x| \geq 0 \land (|x| = \eq x = 0)$
+    \item $|x \cdot y| = |x| \cdot |y|$
+    \item $(|x| < \varepsilon) \eq (x < \varepsilon) \land (-\varepsilon < x) \eq (-\varepsilon < x < \varepsilon)$\\
+          $(|x| \leq \varepsilon) \eq (x \leq \varepsilon) \land (-\varepsilon \leq x) \eq (-\varepsilon \leq x \leq \varepsilon)$
+    \item $|x + y| \leq |x| + |y| (\text{Dreiecksung.})$
+    \item $||x| - |y|| \leq |x - y| (\text{umgekehrte.D.})$
+\end{enumerate}
+\subsection*{Komplexe Zahlen}
+$z_1 + z_2 := (a_1 + a_2, b_1 + b_2)$\\
+$z_1 \cdot z_2 := (a_1a_2 - b_1b_2, a_1b_2 + a_2b_1)$\\
+Nullelement $(0,0)$
+Einselement $(1, 0)$\\
+$-(a, b) = (-a, -b)$(Negativelement)\\
+$(a, b)^{-1} = \left(\frac{a}{a^2 + b^2}, \frac{-b}{a^2 + b^2}\right)$ (Invers.)\\
+$\bar z := (a, -b) = a - ib$\\
+$|z| := \sqrt{z \bar z} = \sqrt{a^2 + b^2}$\\
+$d(z_1, z_2) = |z_1 - z_2|$\\
+$\overline{z_1 \cdot z_2} = \bar z_1 \dot \bar z_2 \quad\quad$
+$\overline{z_1 + z_2} = \bar z_1 + \bar z_2$
+\subsection*{Potenzregeln}
+$a^n a^m = a^{n + m}\quad$
+$(a^n)^m = a^{nm}\quad$
+$a^n b^n = (a \cdot b)^n$
+\subsection*{Algemeine Potenzen}
+$\exp_a(x) := \exp(x \ln(a)) = a^x$\\
+$a) a^x = \exp_a(x)$ stetig $\forall x \in \R$\\
+$b) \forall n \in \Z$: $\exp_a(x) = a^n$\\
+$c) a^{x+y} = a^x a^y$\\
+$d) (a^x)^y = a^{xy}$\\
+$e) a^x b^x = (ab)^x$\\
+$f) \forall p \in \Z, q \in \N\backslash\{1\}: a^{\frac{p}{q}} = \sqrt[q]{a^p}$
+\subsection*{Binomialkoeffizient}
+\begin{align*}
+    &\binom{n}{k} := \begin{cases}
+    \frac{n!}{(n - k)! \cdot k!} = \\
+    \frac{n \cdot (n-1)\cdot ... \cdot (n-k +1)}{k \cdot (k-1) \cdot ... \cdot 1} & n\geq k\\
+    0 & n < k
+    \end{cases}
+\end{align*}
+$\forall n, k \in \N_0: \binom{n}{k} + \binom{n}{k+1} = \binom{n +1}{k+1}$
+\subsection*{Folgen}
+Seien $(a_n)_{n \in \N}, (b_n)_{n \in \N}$ konvergente Folgen und $c\in \R$
+\begin{enumerate}[label=\alph*., noitemsep]
+    \item $(a_n) + (b_n) = (a_n + b_n)$
+    \item $c \cdot (a_n) = (c \cdot a_n)$
+    \item $(a_n) \cdot (b_n) = (a_n \cdot b_n)$
+    \item $\frac{(a_n)}{(b_n)} = \left( \frac{a_n}{b_n} \right)$, falls $b_n \neq 0$
+    \item $\lim_{n \ra \infty} (a_n + b_n) = \lim_{n \ra \infty} (a_n) + \lim_{n \ra \infty} (b_n)$
+    \item $\lim_{n \ra \infty} c \cdot (a_n) = c \cdot \lim_{n \ra \infty} (a_n)$
+    \item $\lim_{n \ra \infty} (a_n) \cdot (b_n) = \lim_{n \ra \infty} (a_n) \cdot \lim_{n \ra \infty} (b_n)$
+    \item $\lim_{n \ra \infty} \frac{(a_n)}{(b_n)} = \frac{\lim_{n \ra \infty} (a_n)}{\lim_{n \ra \infty} (b_n)}$, falls $b_n \neq 0$ und $\lim_{n \ra \infty} b_n \neq 0$
+\end{enumerate}
+\subsection*{Konv. Reihen}
+\begin{enumerate}[label=\alph*., noitemsep]
+    \item $\sum_{k = 1}^\infty (a_k \pm b_k)$ konvergent. Für die Grenzwerte gilt:$\sum_{k = 1}^\infty (a_k \pm b_k) = \sum_{k = 1}^\infty a_k \pm \sum_{k = 1}^\infty b_k$
+    \item $\sum_{k = 1}^\infty c \cdot a_k$ konvergent für $c \in \R$. Es gilt:$\sum_{k = 1}^\infty c \cdot a_k = \cdot \sum_{k = 1}^\infty a_k$
+    \item $\forall l \in N \ l > 0: \sum_{k = l}^\infty a_k$ konvergiert $\eq \sum_{k = 1}^\infty a_k$ konvergiert
+    \item Gilt $a_k \leq b_k \forall k \in \N: \sum_{k = 1}^\infty a_k \leq \sum_{k = 1}^\infty b_k$
+\end{enumerate}
+\subsection*{Funktionen}
+$\bullet (f + g)(x) := f(x) + g(x)$\\
+$\bullet (cf)(x) := c f(x)$\\
+$\bullet (f \cdot g)(x) := f(x) \cdot g(x)$\\
+$\bullet g(x) \neq 0$:$\left(\frac{f}{g}\right)(x) := \frac{f(x)}{g(x)}$\\
+$\bullet f(A) \subseteq B \Ra (g \circ f)(x) := g(f(x))$
+\subsection*{Stetigkeit erhalten}
+$a) f + g: A \ra \R$
+$b) c \cdot f: A \ra \R$\\
+$c) f \cdot g: A \ra \R$\\
+$d) \frac{f}{g}: A' \ra \R$, falls $g(a) \neq 0$\\
+$e) g \circ f: A \ra \R$, falls $f$ in $a$ und $g$ in $f(a) = b$ stetig
+\subsection*{Exponentialfunktion}
+$a) \exp(x + y) = \exp(x) \cdot \exp(y)$\\
+$b) \exp(-x) = \frac{1}{\exp(x)}$\\
+$c) \exp(x) > 0$\\
+$d) \forall n \in \Z: \exp(n) = e^n$\\
+$e) \exp(x) = \lim_{n \ra \infty} (1 + \frac{x}{n})^n$\\
+$f)$ streng mon. wachsend + bijektiv\\
+$g) \lim_{x \ra 0} \frac{\exp(x) - 1}{x} = 1$
+\subsection*{Logarithmus}
+\begin{enumerate}[label=\alph*., noitemsep]
+    \item $\ln(\exp(x)) = \exp(\ln(x)) = x$
+    \item $\ln(1) = 0$ und $\ln(e) = 1$
+    \item $\ln(x) \begin{cases}
+    < 0 &, x \in (0, 1)\\
+    = 0 &, x = 1\\
+    > 0 &, x > 1
+    \end{cases}$
+    \item $\ln(xy) = \ln(x) + \ln(y)$
+    \item $n \in \Z: \ln(x^n) = n \ln(x)$
+    \item $\ln(x)$ ist stetig
+\end{enumerate}
+\subsubsection*{Logarithmus zu alg. Basis}
+Sei $a \in \R_{> 0}\backslash\{1\}$, dann $\log_a: \R_{> 0} \ra \R:$ $\log_a(x) := \frac{\ln(x)}{\ln(a)}$
+\subsection*{Sinh-Cosh}
+$\bullet \cosh(x) := \frac{e^x + e^{-x}}{2}$\\
+$\bullet \sinh(x) := \frac{e^x - e^{-x}}{2}$\\
+$\bullet \tanh(x) := \frac{\sinh(x)}{\cosh(x)} = \frac{e^x - e^{-x}}{e^{-x}  + e^x}$\\
+$a) \exp(x) = \cosh(x) + \sinh(x)$\\
+$b) \cosh^2(x) - \sinh^2(x) = 1$\\
+$c) \cosh(x) = \sum_{k = 0}^{\infty} \frac{x^{2k}}{(2k)!}$\\
+$d) \sinh(x) = \sum_{k = 0}^{\infty} \frac{x^{2k+1}}{(2k + 1)!}$\\
+$e) \cosh(x + y) = \cosh(x)\cosh(y) + \sinh(x) \sinh(y)$\\
+$f) \sinh(x + y) = \sinh(x) \cosh(y) + \sinh(x) \cosh(y)$
+\subsection*{Sin-Cos}
+$\tan: \{x| \cos(x) \neq 0\} \ra \R$\\
+$\bullet \cos(x) := \text{Re}(e^{ix}) = \frac{e^{ix} + e^{-ix}}{2}$\\
+$\bullet \sin(x) := \text{Im}(e^{ix}) = \frac{e^{ix} - e^{-ix}}{2}$\\
+$\bullet \tan(x) := \frac{\sin(x)}{\cos(x)} = \frac{ie^{-ix} - ie^{ix}}{e^{-ix} + e^{ix}}$\\
+$a) \exp(ix) = \cos(x) + i \sin(x)$\\
+$b) \cos^2(x) + \sin^2(x) = 1$\\
+$c) |\sin(x)| \leq 1$ und $|\cos(x)| \leq 1$\\
+$d) \cos(x) = \sum_{k = 0}^\infty (-1)^k \frac{x^{2k}}{(2k)!}$\\
+$e) \sin(x) = \sum_{k = 0}^{\infty} (-1)^k \frac{x^{2k +1}}{(2k + 1)!}$\\
+$f) \cos(x + y) = \cos(x) \cos(y) - \sin(x) \sin(y)$\\
+$g) \sin(x + y) =  \sin(x) \cos(y) + \cos(x)\sin(y)$
+\subsubsection*{Abschätzung Sin-Cos}
+Für $x \in (0, 2]$ gilt:\\
+%\begin{itemize}[leftmargin=*, noitemsep]
+    $\bullet 1 - \frac{x^2}{2} < \cos(x) < 1 - \frac{x^2}{2} + \frac{x^4}{4!}$\\
+    $\bullet x - \frac{x^3}{3!} < \sin(x) < x$
+%\end{itemize}
+\subsubsection*{Folgerung Def. Pi}
+\renewcommand{\arraystretch}{1.5}
+\begin{tabular}{m{1.1em}m{0.2em}m{0.2em}m{0.2em}m{0.2em}m{0.2em}m{0.2em}m{0.2em}m{0.2em}}
+    $x$ & $0$& $\frac{\pi}{6}$ & $\frac{\pi}{4}$ & $\frac{\pi}{3}$ & $\frac{\pi}{2}$ & $\pi$ & $\frac{3\pi}{2}$ & $2\pi$ \\\hline
+    $\cos $ & $1$ & $\frac{\sqrt{3}}{2}$       & $\frac{1}{\sqrt{2}}$ & $\frac{1}{2}$        & $0$  & $-1$ & $0$  & $1$ \\\hline
+    $\sin $ & $0$ & $\frac{1}{2}$              & $\frac{1}{\sqrt{2}}$ & $\frac{\sqrt{3}}{2}$ & $1$  & $0$  & $-1$ & $0$ \\\hline
+    $\tan $ & $0$ & $\frac{1}{\sqrt{3}}$       & $1                 $ & $\sqrt{3}$           & $-$    & $0$   & $-$   & $0$\\
+\end{tabular}
+%Allgemein gilt für alle $x \in \R$:
+$\cos(x + \pi/2) = \sin(x + \pi) =  - \sin(x)$\\
+$\cos(x + 2 \pi) = \sin(x + \pi/2) = \cos(x)$
+$\cos(x + \pi) = -\cos(x)$\\
+$\sin(x + 2\pi) = \sin(x)$
+\renewcommand{\arraystretch}{0.5}%%%
+
+

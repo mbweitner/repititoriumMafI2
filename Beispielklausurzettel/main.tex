@@ -1,0 +1,83 @@
+\documentclass[a4paper, 8pt]{extarticle} %%%%%%%%%%%%%%%%
+\input{packages}
+\usepackage[ngerman]{babel}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+\usepackage[
+  %showframe,% Seitenlayout anzeigen
+  left=0.5cm,
+  right=0.5cm,
+  top=0.5cm,
+  bottom=0.5cm,
+]{geometry}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\input{macros} %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%% NUR hier drunter editieren %%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\allowdisplaybreaks
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Hier beginnen die Aufgaben %%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{multicol}
+\usepackage{titlesec}
+\usepackage{changepage}
+
+\begin{document}
+\setlength{\abovedisplayskip}{0.5pt}
+\setlength{\belowdisplayskip}{0.5pt}
+\renewcommand{\arraystretch}{0.5}
+\setlist{leftmargin=0.4cm}
+\titlespacing*{\section}
+{0pt}{-2pt}{-2pt}
+\titlespacing*{\subsection}
+{0pt}{-2pt}{-2pt}
+\titlespacing*{\subsubsection}
+{0pt}{-2pt}{-2pt}
+
+
+
+\hfill Mafi Killer 112624
+\begin{multicols*}{4}
+%\section*{Grundlagen}
+\input{1.grundlagen}
+\section*{Zahlenmengen}
+\input{2.zahlenmengen}
+\section*{Folgen}
+\input{3.folgen}
+\section*{Reihen}
+\input{4.reihen}
+\section*{Funktionen}
+\input{5.funktionen}
+\section*{Differentialrechnung}
+\input{6.differentialrechnung}
+\section*{Integralrechnung}
+\input{7.integralrechnung}
+
+\subsection*{Bekannte Reihen}
+\subsubsection*{Harmonische Reihe}
+$\sum_{k=1}^\infty \frac{1}{k}$, divergent
+\subsubsection*{Geometrische Reihe}
+$\sum_{k = 0}^\infty q^k$, Grenzwert: $\frac{1}{1-q}$, konvergiert für $|q|< 1$, divergiert für $|q| \geq 1$
+\subsection*{3. Binom. Erweiterung}
+$(b - \sqrt{a}) = (b - \sqrt{a}) \frac{(b + \sqrt{a})}{(b + \sqrt{a})}$
+
+\subsection*{Partialbruchzerlegung}
+1. Polynomdivision (falls nötig)\\
+2. Nullstelllen bestimmen (Umformen)\\
+3. Aus Nullstellen: $\frac{A}{n_1} + ... + \frac{Z}{n_k}$\\
+4. Auf einen Nenner bringen\\
+5. Umformen in ähnliche Form wie Ausgangsfunktion\\
+6. Aus den Koeffizienten A-Z Gleichungssysteme lösen
+\end{multicols*}
+\end{document}
+

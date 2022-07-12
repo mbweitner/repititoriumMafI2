@@ -1,6 +1,15 @@
+## Mafi2 Beispiel Klausurzettel
+Dies hier ist ein Beispielklausurzettel, wie er in der Klausur aussehen könnte. Dabei wurden alle allgemeinen Rechenregeln, wie Potenzregeln, Bruchrechenregeln, ... an den Anfang geschrieben und anschließend folgen thematisch an der Vorlesung orientiert die wichtigsten(fast alle) Sätze und Definitionen aus der Vorlesung. Es wurde auch darauf geachtet, dass die Sätze, die namentlich erwähnt werden müssen, auf jeden Fall auf dem Zettel stehen!
+
+**Wichtig dies ist ein Beispiel, wie man den Zettel gestalten kann! Ich garantiere nicht, dass sich keine Tippfehler eingeschlichen haben.**
+
+Denk dran dies ist ein digitaler Zettel. Ausdrucken und in gedruckter Form verwenden ist in der Klausur nicht erlaubt!
+
+## [Beispiel Klausurzettel](https://github.com/mbweitner/repititoriumMafI2/raw/main/Beispielklausurzettel/main.pdf)
+
 ### Mafi2 Mini Skript
 
-Das Miniskript enhtält alle Sätze und Definitionen des Skriptes aus der Vorlesung. Das ganze befindet sich im Klausurzettelformat, dadurch kann es als Vorlage für einen Klausurzettel dienen. 
+Das Miniskript enhtält alle Sätze und Definitionen des Skriptes aus der Vorlesung. Das ganze befindet sich im Klausurzettelformat, dadurch kann es als Vorlage für einen Klausurzettel dienen.
 
 [Aktuelle PDF-Version](https://github.com/mbweitner/repititoriumMafI2/raw/main/Mini-Skript/main.pdf)
 

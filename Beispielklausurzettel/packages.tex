@@ -1,0 +1,81 @@
+%\usepackage{fancyhdr}
+\usepackage[ngerman,german]{babel}
+\usepackage[utf8]{inputenc}
+%\usepackage[latin1]{inputenc} % für Linux Nutzer
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{extarrows}
+\usepackage{enumerate}
+\usepackage{enumitem}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%Weitere Zeichenpakete für zusätzliche Symbole %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{stmaryrd}
+\usepackage{wasysym}
+\usepackage{pifont}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Mit dem folgenden Paket können einfache Rechnungen automatisch ausgerechnet werden%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{xfp}%Beispiel: \fpeval{3+5+6} => 14
+\usepackage{fp}
+\usepackage{spreadtab}%Tabellenberechnungen
+\usepackage{tabularx}
+
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{pgf}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{color, colortbl}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%% Ganz viele Befehle %%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Mengen
+
+\newcommand{\N}{\mathbb N}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\K}{\mathbb K}	
+
+% Ableitungen
+
+\newcommand{\pfrac}[1]{{\frac\partial{\partial #1}}}	% partielle Ableitung als Bruch, Argument ist Variable, nach der abgeleitet wird
+
+% Griechische Buchstaben
+
+\renewcommand{\phi}{\varphi}
+\newcommand{\eps}{\varepsilon}
+
+% Pfeile / Äquivalenzen 
+
+\newcommand{\Ra}{\Rightarrow}							% "daraus folgt"
+\newcommand{\ra}{\rightarrow}							% "daraus folgt"
+\newcommand{\La}{\Leftarrow}							% (analog wie oben)
+\newcommand{\la}{\leftarrow}							% (analog wie oben)
+\newcommand{\eq}{\Leftrightarrow}						% äquivalent
+\newcommand{\upto}{\nearrow}							% Konvergenz von unten
+\newcommand{\downto}{\searrow}							% Konvergenz von oben
+
+% Vektorräume
+
+\newcommand{\inv}{{-1}}									% zum schnelleren Invertieren per ^\inv
+
+\newcommand{\mat}[4]{\begin{pmatrix}#1&#2\\#3&#4\end{pmatrix}}
+														% 2x2-Matrix
+\newcommand{\vek}[2]{\begin{pmatrix}#1\\#2\end{pmatrix}}% 2dim. Vektor
+
+\newcommand{\bpm}{\begin{pmatrix}}						% Matrix (Anfang)
+\newcommand{\epm}{\end{pmatrix}}						% Matrix (Ende)
+
+%%%%%%%%%%check und uncheck%%%%%%%%%%%%%%%%
+\newcommand{\cmark}{\text{\ding{51}}}                   % Check-Mark
+\newcommand{\xmark}{\text{\ding{55}}}                   % UncheckMark
+	
+\usepackage{polynom}

@@ -1,0 +1,109 @@
+\subsubsection*{Definition}
+Sei $a \in A \subseteq \R$ und $f: A \ra \R$. $f$ heißt in $a$ diffbar, falls Grenzwert $\lim_{\underset{x \in A\backslash\{a\}}{x \ra a}} \frac{f(x) - f(a)}{x - a}$ exist. 
+Oder:\\$f'(x) = \lim_{h \ra 0} \frac{f(a + h) - f(a)}{h}$.\\
+$\forall a \in A$ Grenzwert exist. $\Ra$ $f$ diffbar.
+
+\subsubsection*{Diffbar \texorpdfstring{$\Ra$}{folgt} Stetig}
+%$f:A \ra \R$ in $a \in A $ differenzierbar $\Ra$ in $a$ stetig
+\subsection*{Satz 5.5}
+%$f:[a, b] \ra \R$ diffbar für $c\in (a, b)$ g.d.w. links- + rechtsseitiger Grenzwert existieren und gleich sind. 
+$f'_{-}(c) = \lim\limits_{x \nearrow c} \frac{f(x) - f(c)}{x - c} = f'_{+}(c) = \lim\limits_{x \searrow c} \frac{f(x) - f(c)}{x - c} \Ra$ $f'(c) = f'_{-}(c) = f'_{+}(c)$
+\subsection*{Ableitungsregeln}
+%$f, g: A \ra \R$ in $a \in A$ diffbar.
+%\begin{enumerate}[label=\alph*., noitemsep]
+    $a)$ Linearität:\\
+    $(c \cdot f)'(a) = c \cdot f'(a)$
+    $(f + g)'(a) = f'(a) + g'(a)$\\
+    $b)$ Produktregel:\\
+    $(f \cdot g)'(a) = f'(a) \cdot g(a) + f(a) \cdot g'(a)$\\
+    $c)$ Quotientenr.: $g(x) \neq 0, \forall x \in A$\\
+    $\left(\frac{f}{g}\right)'(a) = \frac{f'(a) \cdot g(a) - f(a) \cdot g'(a)}{g^2(a)}$\\
+    $d)$ Kettenregel:\\
+    $(g \circ f)'(a) = g'(f(a)) \cdot f'(a)$
+%\end{enumerate}
+\subsection*{Ableitung Umkehrf.}
+%Sei $f:I\ra \R$ stetig streng monoton und $g = f^{-1}:J\ra\R$ mit $J = f(I)$. $f$ in $a \in I$ diffbar und $f'(a)\neq 0 \Ra g$ in $b = f(a)$ diffbar und es gilt: $g'(b) = \frac{1}{f'(a)} = \frac{1}{f'(g(b))}$
+$f$ stetig,streng mon,diffbar, $g=f^{-1}$ $\Ra$ $g'(f(a)) = \frac{1}{f'(a)}$
+\subsection*{Ableitung höherer Ord.}
+$f^{(k + 1)}(a) := \left(f^{(k)}(a)\right)'$
+%, falls $f^{(k)}(a)$ in $a \in A$ existiert. 
+$f$ $k$-mal (stetig) diffbar oder $f$ $C^k$-stetig
+\subsection*{Lokale Extrema}
+%$f:(a, b) \ra \R$ in $x \in  (a, b)$ lok. Min/Max $f(x)$, wenn
+$\exists\varepsilon > 0 \ \forall y, |x - y| < \varepsilon: f(a) \leq\geq f(y)$
+\subsubsection*{Notw. Bed. lok. Extrema}
+$f:(a, b) \ra \R: f'(x) = 0$
+\subsubsection*{Hin. Bed. lok. Extrema}
+$f:(a, b) \ra \R$ 2 mal diffbar in $x \in (a, b)$. $f''(x) > 0$: Minimum, $f''(x) < 0$: Maximum
+\subsection*{Monoton. und Ableitung}
+$f:[a,b]\ra \R$ stetig, diffbar in $(a, b)$:\\
+%\begin{enumerate}[label=\alph*., noitemsep]
+    $\bullet f'(x) \geq 0 \eq f$ mon. wachs.\\
+    $\bullet f'(x) > 0 \Ra f$ streng mon. wach.\\
+    $\bullet f'(x) \leq 0 \eq f$ mon. fall.\\
+    $\bullet f'(x) < 0 \Ra f$ streng mon. fall.
+%\end{enumerate}
+\subsection*{Satz von Rolle}
+Sei $a < b$ und $f:[a, b] \ra \R$ stetig (auf $(a, b)$ diffbar) mit $f(a) = f(b)$, dann: $\exists c \in (a, b): f'(c) = 0$
+\subsection*{1. Mittelwertsatz}
+Sei $a < b$ und $f:[a, b] \ra \R$ stetig (auf $(a, b)$ diffbar) mit $f(a) = f(b)$, dann: $\exists c \in (a, b): \frac{f(b) - f(a)}{b - a} = f'(c)$
+\subsection*{2. Mittelwertsatz}
+$f, g: [a, b]\ra \R$ stetig in $[a, b]$, diffbar in $(a, b)$. Sei 
+%$\forall x \in (a, b):$ 
+$g'(x)\neq 0$ $\Ra$ $g(a) \neq g(b)$ + $\exists c \in (a, b)$ mit $\frac{f(b) - f(a)}{g(b) - g(a)} = \frac{f'(c)}{g'(c)}$
+\subsection*{Satz 5.21}
+$f:(a, b) \ra \R$ 
+%diffbar und im Punkt $x \in (a, b)$ 
+$n +1$-mal diffbar. Falls $f'(x) = f^{(2)}(x) = ... = f^{(n)}(x) = 0$ und $f^{(n+1)}(x) \neq 0$, dann $f$ in $x$\\
+%\begin{itemize}[leftmargin=*, noitemsep]
+    $\bullet$ streng. lok. Min., falls $n$ ungerade und $f^{(n+1)}(x) > 0$\\
+    $\bullet$ streng. lok. Max., falls $n$ ungerade und $f^{(n+1)}< 0$\\
+    $\bullet$ kein Extremum, falls $n$ gerade
+%\end{itemize}
+\subsection*{Konvexität}
+%$f:(a, b) \ra \R$ heißt konvex, wenn 
+$\forall x_1, x_2 \in (a,b)\forall \lambda\in(0,1):$ $f(\lambda x_1 + (1 - \lambda) x_2) \leq \lambda f(x_1) + (1 - \lambda)f(x_2)$. Konkav wenn $-f$ konvex.
+\subsubsection*{Satz 5.23}
+$f$ konvex $\eq$ $\forall x \in (a, b): f''(x) \geq 0$
+\subsection*{Wendepunkt}
+$f$ in $x \in (a, b)$ Wendepunkt, wenn $\exists(\alpha, x), (x, \beta)$ für die gilt:\\
+%\begin{enumerate}[label=\arabic*, noitemsep]
+    $1.$ $f$ in $(\alpha, x)$ streng konvex + in $(x, \beta)$ streng konkav\\
+    $2.$ $f$ in $(\alpha, x)$ streng konvex + in $(x, \beta)$ streng konvex
+%\end{enumerate}
+\subsubsection*{Satz 5.26}
+%$f:(a, b) \ra \R$ 3 mal diffbar: $f'$ lok. Extremum in $x$ $\Ra$ Wendepunkt
+%\begin{itemize}[noitemsep]
+    $\bullet$ Not. Bed.: $f''(x) = 0$\\
+    $\bullet$ Hin. Bed.: $f''(x) = 0$ $\land$ $f'''(x) \neq 0$
+%\end{itemize}
+\subsection*{Uneigentlicher Grenzwert}
+$f:A \ra \R$ und $a$ Häufungspunkt. Falls $\forall K \in \R \ \exists \delta > 0$, sodass $f(x) > K$ für $|x - a| < \delta$, $\lim_{x \ra a}f(x) = \infty$.
+\subsection*{L'Hospital}
+%$f, g$ diffbar und $g(x) \neq 0$ und $g'(x) \neq 0$ für alle $x \in (a, b)$. Und 
+a oder b gilt:\\
+%\begin{enumerate}[label=\alph*., noitemsep]
+    $a) \lim\limits_{x \searrow a} f(x) = \lim\limits_{x \searrow a} g(x)= 0$\\
+    $b) \lim\limits_{x \searrow a} |f(x)| = \lim\limits_{x \searrow a} |g(x)| = \infty$\\
+%\end{enumerate}
+Dann:$\lim_{x\searrow a} \frac{f(x)}{g(x)} = \lim_{x \searrow a} \frac{f'(x)}{g'(x)}$. Analog für $\lim_{x \nearrow b}$ und $a, b = \pm \infty$.
+\subsection*{Satz von Taylor}
+\subsubsection*{Tylorsche Formel}
+$f$
+%$: A \ra \R$ 
+($n + 1$)-mal stetig diffbar.\\
+%$T_n, R_n: A \ra \R$ für beliebiges $n \in \N$ und $x_0\in A$ definiert als
+$T_n(x) := \sum_{k = 0}^n \frac{f^{(k)}(x_0)}{k!}(x - x_0)^k$\\ %und 
+$R_n(x) := f(x) - T_n(x)$\\%. Dann 
+%$\exists y\in [x, x_0] \forall x \in A \backslash\{x_0\}$, sodass 
+$R_n(x) = \frac{f^{(n+1)}(y)}{(n+1)!}(x - x_0)^{n+1}$
+\subsubsection*{Taylorreihe/-polynom}
+$f$
+%$:A \ra \R$ 
+beliebig oft diffbar\\
+%in $x_0 \in A$. Dann heißt 
+$T[f, x_0](x) = \sum\limits_{k = 0}^\infty \frac{f^{(k)}(x_0)}{k!} (x - x_0)^k$ 
+%Taylorreihe von $f$ im Punkt $x_0$.\\
+%Die $n$-te Teilsumme der Taylorreihe 
+%$T_n[f, x_=](x)$ heißt Taylorpolynom vom Grad $n$ mit Entwick.punkt $x_0$:
+$T_n[f, x_0](x) = \sum\limits_{k = 0}^n \frac{f^{(k)}(x_0)}{k!} (x - x_0)^k$
